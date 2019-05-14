@@ -1,0 +1,21 @@
+.header-top .logo{
+  background-color: #ee3643;
+  display: block;
+  height: 47px;
+  text-align: center;
+  line-height: 47px;
+  width: 220px;
+}
+.footer-top .logo{
+  background-color: #ee3643;
+  display: block;
+  height: 68px;
+  line-height: 68px;
+  text-align: center;
+  width: 220px;
+}
+.logo img{
+  vertical-align: middle;
+}
+
+
