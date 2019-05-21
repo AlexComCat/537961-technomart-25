@@ -1,3 +1,12 @@
+/*common*/
+body{
+  background-color: #fff;
+  color: #000;
+  font: 400 17px/17px 'Cuprum', Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -8,6 +17,26 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.btn{
+  background-color: #ee3643;
+  border-radius: 3px;
+  color:#fff;
+  display: inline-block;
+  font-size: 14px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn:hover{
+  background-color: #ca2c37;
+}
+.btn:active{
+  background-color: #ba2732;
+}
+
+
+/*header*/
 .header-top .logo{
   background-color: #ee3643;
   display: block;
@@ -15,7 +44,13 @@
   text-align: center;
   line-height: 47px;
   width: 220px;
+  vertical-align: middle;
 }
+
+
+
+
+/*footer*/
 .footer-top .logo{
   background-color: #ee3643;
   display: block;
@@ -23,9 +58,6 @@
   line-height: 68px;
   text-align: center;
   width: 220px;
-}
-.logo img{
   vertical-align: middle;
 }
-
 
