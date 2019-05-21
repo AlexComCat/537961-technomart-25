@@ -34,17 +34,75 @@ a {
 .btn:active{
   background-color: #ba2732;
 }
-
+.logo{
+  background-color: #ee3643;
+  box-shadow: 0 5px 0 0 #b52933;
+  display: block;
+  text-align: center;
+  width: 220px;
+}
+.logo:hover{
+  background-color: #ca2c37;
+}
+.logo:active{
+  background-color: #ba2732;
+}
+.logo img{
+  vertical-align: middle;
+}
 
 /*header*/
+.header-top{
+  background-color: #293449;
+  display: flex;
+  justify-content: space-between;
+}
 .header-top .logo{
-  background-color: #ee3643;
+  height: 42px;
+  line-height: 42px;
+}
+.search-form{
+  position: relative;
+}
+.search-input{
+  background-color: transparent;
+  border: none;
+  height: 42px;
+  padding-left: 48px;
+  width: 270px;
+}
+.search-input:hover{
+  background-color: #212a3a;
+}
+.search-input:focus{
+  background-color: #fff;
+  color: #000;
+  height: 42px;
+}
+.search-btn{
+  background: url("../img/icon-search.svg") transparent no-repeat center;
+  border: none;
+  color: inherit;
+  font: inherit;
+  height: 42px;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  opacity: .3;
+  top: 0;
+  width: 48px;
+}
+.search-btn:hover{
+  opacity: 1;
+  border: none;
+}
+
+.header-top-link{
   display: block;
-  height: 47px;
+  height: 42px;
+  line-height: 42px;
   text-align: center;
-  line-height: 47px;
-  width: 220px;
-  vertical-align: middle;
+  width: 150px;
 }
 
 
@@ -52,12 +110,7 @@ a {
 
 /*footer*/
 .footer-top .logo{
-  background-color: #ee3643;
-  display: block;
-  height: 68px;
-  line-height: 68px;
-  text-align: center;
-  width: 220px;
-  vertical-align: middle;
+  height: 63px;
+  line-height: 63px;
 }
 
