@@ -23,8 +23,7 @@ a {
   color:#fff;
   display: inline-block;
   font-size: 14px;
-  height: 38px;
-  line-height: 38px;
+  line-height: 18px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -52,6 +51,9 @@ a {
 }
 
 /*header*/
+.site-heading{
+  background-color: #f1f5f7;
+}
 .header-top{
   background-color: #293449;
   display: flex;
@@ -88,7 +90,7 @@ a {
   left: 0;
   padding: 0;
   position: absolute;
-  opacity: .3;
+  opacity: 0.3;
   top: 0;
   width: 48px;
 }
@@ -98,19 +100,314 @@ a {
 }
 
 .header-top-link{
+  background-position: 17px 50%;
+  background-repeat: no-repeat;
   display: block;
+  color: #fff;
   height: 42px;
   line-height: 42px;
   text-align: center;
   width: 150px;
 }
+.header-top-link:hover{
+  background-color: #212a3a;
+}
+.header-top-link:active{
+  background-color: #161d29;
+  color: rgba(255, 255, 255, 0.6);
+}
+.mark{
+  background-image: url("../img/icon-bookmark.svg");
+}
+.basket{
+  background-image: url("../img/cart-icon.svg");
+}
+.order{
+  background-color: #63a63e;
+}
+.order:hover{
+  background-color: #5fbb2d;
+}
+.order:active{
+  background-color: #518534;
+}
+.header-middle{
+  background-color: #f1f5f7;
+}
+.header-middle .site-heading{
+  font: italic 16px/23px "Cuprum Italic", Arial, sans-serif;
+  color: #ee3643;
+}
+.header-middle .address{
+  color: #32425c;
+  font-size: 14px;
+  line-height: 24px;
+}
+.address span{
+  background: url("../img/icon-phone.svg") no-repeat 12px 50%;
+  border: 3px solid #fff;
+  display: block;
+  color: #ee3643;
+  font-size: 21px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  width: 270px;
+}
+.registration{
+  list-style: none;
+  padding: 0;
+}
+.registration a{
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 21px;
+  line-height: 21px;
+}
+.registration a:hover{
+  color: #ee3643;
+}
+.registration a:active{
+  color: rgba(0, 0, 0, 0.3);
+}
+.account{
+
+}
+.account a{
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 21px;
+  line-height: 21px;
+}
+.account a:active{
+  color: rgba(0, 0, 0, 0.3);
+}
+.account-list a{
+  background-color: transparent;
+  color: #32425c;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
+}
+.account-list a:hover{
+  color: #ee3643;
+}
+.account-list a:active{
+  color: rgba(0, 0, 0, 0.3);
+}
+.account-list .my-order{
+  list-style: none;
+}
+
+.site-navigation{
+  background-color: #32425c;
+}
+.nav-list{
+  border-bottom: 5px solid #293449;
+  list-style: none;
+  padding: 0;
+}
+.nav-item a{
+  color: #fff;
+}
+.nav-item a:hover{
+  background-color: #293449;
+}
+.nav-item a:active{
+  background-color: #1d2739;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*Хлебные крошки*/
+.breadcrumbs-list{
+  list-style: none;
+}
+.breadcrumbs a{
+  color: #000;
+  font: normal 13px/18px "PT Sans", Arial, sans-serif;
+  text-transform: uppercase;
+}
 
 
+/*Контент*/
+.main-content{
+  background-color: #fff;
+}
+.section-heading{
+  background-color: #f2f6f8;
+  color: #32425c;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
 
+/*Фильтр*/
+.filter-section{
+  color: #000;
+  font-family: "PT Sans", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.filter-section legend{
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 30px;
+}
+.filter-section label{
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+.filter-show{
+  background-color: transparent;
+  color: #000;
+  font-size: 13px;
+  line-height: 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+}
+
+/*Карточки товаров*/
+.product-heading{
+  background-color: #f9f5f0;
+  color: #32425c;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.product-list{
+  font: 600 17px/18px "PT Sans", Arial, sans-serif;
+  list-style: none;
+  padding: 0;
+}
+.product-actions{
+  list-style: none;
+  padding: 0;
+}
+.product-actions a{
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 3px;
+}
+.product-pay a{
+  background-color: #63a63e;
+  color: #fff;
+}
+.product-pay a:hover{
+  background-color: #5fbb2d;
+}
+.product-pay a:active{
+  background-color: #518534;
+}
+.product-mark a{
+  border: 3px solid #63a63e;
+  color: #32425c;
+}
+.product-mark a:hover{
+  border: 3px solid #32425c;
+  color: #32425c;
+}
+.product-mark a:active{
+  border: 3px solid rgba(50, 66, 92, 0.3);
+  color: rgba(50, 66, 92, 0.3);
+}
+.product-list .product-name{
+  font-size: 18px;
+  line-height: 20px;
+}
+.product-list .old-price{
+  color: #a9a9a9;
+}
+.product-list .new-price{
+  font: 600 17px/18px "PT Sans", Arial, sans-serif;
+}
+
+/*Популярные производители*/
+.pop-fabric-heading{
+  background-color: #f9f5f0;
+  color: #32425c;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.pop-fabric-list{
+  list-style: none;
+  padding: 0;
+}
+
+/*Доставка и контакты*/
+.company-info h3{
+  font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.company-info p{
+  font: normal 13px/24px "PT Sans", Arial, sans-serif;
+}
+.delivery-list{
+  font: normal 18px/20px "Cuprum", Arial, sans-serif;
+  list-style-type: none;
+}
 
 /*footer*/
+.site-footer{
+  background-color: #32425c;
+  font: normal 18px/24px "Cuprum", Arial, sans-serif;
+}
+.site-footer ul{
+  list-style: none;
+  padding: 0;
+}
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
 .footer-top .logo{
   height: 63px;
   line-height: 63px;
 }
+.footer-top .navigation-link{
+  color: #f1f5f7;
+}
 
+.footer-middle address{
+  color: #f3f7f9;
+  font: normal 18px/20px "Cuprum", Arial, sans-serif;
+}
+.footer-middle .services-nav-link{
+  color: #ffd180;
+}
+
+.footer-bottom{
+  background-color: #293449;
+}
+.footer-bottom p{
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+}
+.footer-bottom a{
+  color: #ffd180;
+}
+.footer-bottom .social-link{
+  border-radius: 50%;
+  background-color: #212a3a;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  height: 42px;
+  width: 42px;
+}
+.footer-bottom .social-link:hover,
+.footer-bottom .social-link:active{
+  background-color: #ee3643;
+}
+.vk{
+  background-image: url("../img/icon-vk.svg");
+}
+.fb{
+  background-image: url("../img/icon-fb.svg");
+}
+.ig{
+  background-image: url("../img/icon-insta.svg");
+}
