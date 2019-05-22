@@ -1,8 +1,8 @@
-/*common*/
+/*Общее*/
 body{
   background-color: #fff;
   color: #000;
-  font: 400 17px/17px 'Cuprum', Arial, sans-serif;
+  font: normal 17px/17px 'Cuprum', Arial, sans-serif;
 }
 a {
   text-decoration: none;
@@ -22,8 +22,7 @@ a {
   border-radius: 3px;
   color:#fff;
   display: inline-block;
-  font-size: 14px;
-  line-height: 18px;
+  font: normal 14px/18px Cuprum, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
 }
@@ -50,10 +49,12 @@ a {
   vertical-align: middle;
 }
 
-/*header*/
-.site-heading{
-  background-color: #f1f5f7;
+/*Основная шапка*/
+.site-header{
+  background-color: #f3f7f8;
 }
+
+/*Верх шапки*/
 .header-top{
   background-color: #293449;
   display: flex;
@@ -98,7 +99,6 @@ a {
   opacity: 1;
   border: none;
 }
-
 .header-top-link{
   background-position: 17px 50%;
   background-repeat: no-repeat;
@@ -131,9 +131,8 @@ a {
 .order:active{
   background-color: #518534;
 }
-.header-middle{
-  background-color: #f1f5f7;
-}
+
+/*Средняя часть шапки*/
 .header-middle .site-heading{
   font: italic 16px/23px "Cuprum Italic", Arial, sans-serif;
   color: #ee3643;
@@ -143,64 +142,67 @@ a {
   font-size: 14px;
   line-height: 24px;
 }
-.address span{
+.address .telephone{
   background: url("../img/icon-phone.svg") no-repeat 12px 50%;
   border: 3px solid #fff;
-  display: block;
+  display: table-cell;
   color: #ee3643;
   font-size: 21px;
   height: 45px;
-  line-height: 45px;
+  line-height: 21px;
   text-align: center;
+  vertical-align: middle;
   width: 270px;
 }
+
+/*Блок регистрации для index*/
 .registration{
   list-style: none;
   padding: 0;
 }
-.registration a{
+.registration .reg-link{
   background-color: #fff;
   color: #000;
   display: inline-block;
   font-size: 21px;
   line-height: 21px;
 }
-.registration a:hover{
+.registration .reg-link:hover{
   color: #ee3643;
 }
-.registration a:active{
+.registration .reg-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
-.account{
 
-}
-.account a{
+/*Блок учетной записи для catalog*/
+.account .account-link{
   background-color: #fff;
   color: #000;
   display: inline-block;
   font-size: 21px;
   line-height: 21px;
 }
-.account a:active{
+.account .account-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
-.account-list a{
+.account-list .account-link{
   background-color: transparent;
   color: #32425c;
   font-size: 16px;
   line-height: 18px;
   text-decoration: underline;
 }
-.account-list a:hover{
+.account-list .account-link:hover{
   color: #ee3643;
 }
-.account-list a:active{
+.account-list .account-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
 .account-list .my-order{
   list-style: none;
 }
 
+/*Навигация сайта*/
 .site-navigation{
   background-color: #32425c;
 }
@@ -209,22 +211,22 @@ a {
   list-style: none;
   padding: 0;
 }
-.nav-item a{
+.nav-item .nav-link{
   color: #fff;
 }
-.nav-item a:hover{
+.nav-item .nav-link:hover{
   background-color: #293449;
 }
-.nav-item a:active{
+.nav-item .nav-link:active{
   background-color: #1d2739;
   color: rgba(255, 255, 255, 0.5);
 }
 
-/*Хлебные крошки*/
+/*Хлебные крошки для catalog*/
 .breadcrumbs-list{
   list-style: none;
 }
-.breadcrumbs a{
+.breadcrumbs-link{
   color: #000;
   font: normal 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
@@ -235,29 +237,47 @@ a {
 .main-content{
   background-color: #fff;
 }
+.index-heading{
+  background-color: #f9f5f0;
+  color: #32425c;
+  font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+}
 .section-heading{
   background-color: #f2f6f8;
   color: #32425c;
-  font-size: 30px;
-  line-height: 30px;
+  font: normal 30px/30px "Cuprum", Arial, sans-serif;
   text-transform: uppercase;
 }
 
-/*Фильтр*/
-.filter-section{
-  color: #000;
-  font-family: "PT Sans", Arial, sans-serif;
+/*Фильтр для catalog*/
+.filter{
+  font: normal 15px/20px "PT Sans", Arial, sans-serif;
+}
+.filter-heading{
+  background-color: #f7f3ec;
+  font-size: 13px;
+  line-height: 18px;
   text-transform: uppercase;
 }
-.filter-section legend{
+.filter-section{
+  border: none;
+  color: #000;
+  text-transform: uppercase;
+}
+.filter-legend{
   font-weight: bold;
   font-size: 17px;
   line-height: 30px;
 }
-.filter-section label{
-  font-family: "PT Sans", Arial, sans-serif;
+.filter-label{
   font-size: 15px;
   line-height: 20px;
+}
+.price-range,
+.min-price,
+.max-price{
+  background-color: #f7f3ec;
 }
 .filter-show{
   background-color: transparent;
@@ -267,86 +287,157 @@ a {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
 }
+.filter-section input:disabled{
+  color: rgba(0, 0, 0, 0.4);
+}
 
-/*Карточки товаров*/
-.product-heading{
-  background-color: #f9f5f0;
-  color: #32425c;
-  font-size: 30px;
-  line-height: 30px;
+/*Сортировка*/
+.sort{
+  background-color: #f7f3ec;
+  font: normal 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
 }
+.sort-heading{
+  color: #000;
+  font: inherit;
+}
+.sort-list{
+  list-style: none;
+  padding: 0;
+}
+.sort-link{
+  border-bottom: 1px dotted #ee3643;
+  color: rgba(0, 0, 0, 0.3);
+  font: inherit;
+}
+.sort-link:hover{
+  border-bottom: 1px solid #ee3643;
+  color: rgba(0, 0, 0, 1);
+}
+.sort-link:active{
+  border: none;
+  color: #ee3643;
+}
+
+/*Карточки товаров*/
+.popular-products ul,
+.product-cards ul{
+  list-style: none;
+  padding: 0;
+}
 .product-list{
-  font: 600 17px/18px "PT Sans", Arial, sans-serif;
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
-.product-actions{
-  list-style: none;
-  padding: 0;
+.product-item{
+  border: 1px solid #eaeaea;
+  margin: 5px;
+  width: 220px;
 }
-.product-actions a{
+.product-item:hover{
+  border: none;
+  box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
+}
+.product-list{
+  font: bold 18px/20px "PT Sans", Arial, sans-serif;
+}
+.product-actions .product-link{
+  font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
+  font-weight: normal;
   line-height: 18px;
   border-radius: 3px;
 }
-.product-pay a{
+.product-pay .product-link{
   background-color: #63a63e;
   color: #fff;
 }
-.product-pay a:hover{
+.product-pay .product-link:hover{
   background-color: #5fbb2d;
 }
-.product-pay a:active{
+.product-pay .product-link:active{
   background-color: #518534;
 }
-.product-mark a{
+.product-mark .product-link{
   border: 3px solid #63a63e;
   color: #32425c;
 }
-.product-mark a:hover{
+.product-mark .product-link:hover{
   border: 3px solid #32425c;
   color: #32425c;
 }
-.product-mark a:active{
+.product-mark .product-link:active{
   border: 3px solid rgba(50, 66, 92, 0.3);
   color: rgba(50, 66, 92, 0.3);
 }
-.product-list .product-name{
-  font-size: 18px;
-  line-height: 20px;
-}
 .product-list .old-price{
   color: #a9a9a9;
+  font: 700 17px/18px "PT Sans", Arial, sans-serif;
 }
 .product-list .new-price{
-  font: 600 17px/18px "PT Sans", Arial, sans-serif;
+  display: block;
+  font: bolder 17px/18px "PT Sans", Arial, sans-serif;
+  width: 120px;
 }
 
 /*Популярные производители*/
-.pop-fabric-heading{
-  background-color: #f9f5f0;
-  color: #32425c;
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
 .pop-fabric-list{
   list-style: none;
   padding: 0;
 }
 
 /*Доставка и контакты*/
-.company-info h3{
+.delivery-heading,
+.contacts-heading{
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
   text-transform: uppercase;
 }
-.company-info p{
+.delivery-text,
+.contacts-caption{
   font: normal 13px/24px "PT Sans", Arial, sans-serif;
 }
 .delivery-list{
   font: normal 18px/20px "Cuprum", Arial, sans-serif;
   list-style-type: none;
+}
+
+/*Линки карточек*/
+.card-link{
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  color: #000;
+  display: table-cell;
+  font: normal 13px/18px "PT Sans", Arial, sans-serif;
+  height: 38px;
+  text-align: center;
+  vertical-align: middle;
+  width: 38px;
+}
+.card-link:hover{
+  border-color: #bdc6ca;
+}
+.card-link:active{
+  border-color: #ee3643;
+}
+.current-card{
+  background-color: #ee3643;
+  color: #fff;
+}
+.card-link:last-child{
+  width: 140px;
+}
+
+/*Описание раздела*/
+.page-caption{
+  background-color: #f2f6f8;
+}
+.page-caption-heading{
+  font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.page-caption-text{
+  font: normal 13px/24px "PT Sans", Arial, sans-serif;
 }
 
 /*footer*/
@@ -358,10 +449,13 @@ a {
   list-style: none;
   padding: 0;
 }
-.site-footer a:hover{
+.site-footer .footer-link:hover{
   text-decoration: underline;
 }
-
+.site-footer .footer-link:active{
+  opacity: 0.5;
+  text-decoration: none;
+}
 .footer-top .logo{
   height: 63px;
   line-height: 63px;
@@ -402,6 +496,10 @@ a {
 .footer-bottom .social-link:active{
   background-color: #ee3643;
 }
+.footer-bottom .footer-link:active{
+  color: #ee3643;
+  opacity: 1;
+}
 .vk{
   background-image: url("../img/icon-vk.svg");
 }
@@ -410,4 +508,12 @@ a {
 }
 .ig{
   background-image: url("../img/icon-insta.svg");
+}
+
+
+/*Попапы*/
+.feedback-message,
+.map-popup,
+.order-message{
+  display: none;
 }
