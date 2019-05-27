@@ -17,12 +17,20 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
 .btn{
+  align-items: center;
   background-color: #ee3643;
   border-radius: 3px;
   color:#fff;
-  display: inline-block;
+  display: flex;
   font: normal 14px/18px Cuprum, Arial, sans-serif;
+  justify-content: center;
+  min-height: 38px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -52,16 +60,20 @@ a {
 /*Основная шапка*/
 .site-header{
   background-color: #f3f7f8;
+  border-bottom: 1px solid transparent;
 }
 
 /*Верх шапки*/
 .header-top{
   background-color: #293449;
+  min-height: 42px;
+  margin-bottom: 45px;
+}
+.header-top .container{
   display: flex;
-  justify-content: space-between;
 }
 .header-top .logo{
-  height: 42px;
+  height: 100%;
   line-height: 42px;
 }
 .search-form{
@@ -70,7 +82,7 @@ a {
 .search-input{
   background-color: transparent;
   border: none;
-  height: 42px;
+  height: 40px;
   padding-left: 48px;
   width: 270px;
 }
@@ -80,7 +92,7 @@ a {
 .search-input:focus{
   background-color: #fff;
   color: #000;
-  height: 42px;
+  outline: none;
 }
 .search-btn{
   background: url("../img/icon-search.svg") transparent no-repeat center;
@@ -100,13 +112,14 @@ a {
   border: none;
 }
 .header-top-link{
+  align-items: center;
   background-position: 17px 50%;
   background-repeat: no-repeat;
-  display: block;
+  display: flex;
   color: #fff;
   height: 42px;
-  line-height: 42px;
-  text-align: center;
+  justify-content: center;
+  line-height: 18px;
   width: 150px;
 }
 .header-top-link:hover{
@@ -133,39 +146,55 @@ a {
 }
 
 /*Средняя часть шапки*/
+.header-middle{
+  margin-bottom: 30px;
+  display: flex;
+}
 .header-middle .site-heading{
-  font: italic 16px/23px "Cuprum Italic", Arial, sans-serif;
+  font: italic 16px/23px "Cuprum", Arial, sans-serif;
   color: #ee3643;
+  margin: 0;
+  padding: 0 50px;
+  width: 200px;
 }
 .header-middle .address{
   color: #32425c;
   font-size: 14px;
   line-height: 24px;
+  margin: 0;
+}
+.address{
+  text-align: center;
 }
 .address .telephone{
+  align-items: center;
   background: url("../img/icon-phone.svg") no-repeat 12px 50%;
   border: 3px solid #fff;
-  display: table-cell;
+  display: flex;
   color: #ee3643;
   font-size: 21px;
-  height: 45px;
+  height: 39px;
+  justify-content: center;
   line-height: 21px;
-  text-align: center;
-  vertical-align: middle;
-  width: 270px;
+  width: 264px;
 }
 
 /*Блок регистрации для index*/
 .registration{
+  display: flex;
   list-style: none;
+  margin: 0 0 0 auto;
   padding: 0;
 }
 .registration .reg-link{
+  align-items: center;
   background-color: #fff;
   color: #000;
-  display: inline-block;
+  display: flex;
   font-size: 21px;
+  justify-content: center;
   line-height: 21px;
+  min-height: 45px;
 }
 .registration .reg-link:hover{
   color: #ee3643;
@@ -173,23 +202,58 @@ a {
 .registration .reg-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
+.log-in .reg-link{
+  width: 121px;
+}
+.register .reg-link{
+  margin-left: 10px;
+  width: 150px;
+}
 
 /*Блок учетной записи для catalog*/
-.account .account-link{
+.account{
+  margin-left: auto;
+  width: 300px;
+}
+.account-link-wrap{
+  display: flex;
+}
+.account-link-wrap .account-link{
+  align-items: center;
   background-color: #fff;
   color: #000;
-  display: inline-block;
+  display: flex;
   font-size: 21px;
+  justify-content: center;
   line-height: 21px;
+  min-height: 45px;
+
 }
-.account .account-link:active{
+.account-link-wrap .account-link:active{
   color: rgba(0, 0, 0, 0.3);
+}
+.account-btn{
+  width: 255px;
+}
+.log-out{
+  background: url("../img/icon-logout.svg") no-repeat center;
+  width: 45px;
+}
+
+.account-list{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.account-list li{
+  list-style: none;
 }
 .account-list .account-link{
   background-color: transparent;
   color: #32425c;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 24px;
+  padding: 0 14px 0 18px;
   text-decoration: underline;
 }
 .account-list .account-link:hover{
@@ -198,21 +262,27 @@ a {
 .account-list .account-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
-.account-list .my-order{
-  list-style: none;
-}
 
 /*Навигация сайта*/
 .site-navigation{
-  background-color: #32425c;
+  margin-bottom: 60px;
 }
 .nav-list{
+  background-color: #32425c;
   border-bottom: 5px solid #293449;
+  display: flex;
+  justify-content: center;
   list-style: none;
+  margin: 0;
+  min-height: 55px;
   padding: 0;
 }
 .nav-item .nav-link{
+  display: flex;
+  height: 100%;
   color: #fff;
+  padding: 0 30px;
+  align-items: center;
 }
 .nav-item .nav-link:hover{
   background-color: #293449;
@@ -237,55 +307,122 @@ a {
 .main-content{
   background-color: #fff;
 }
-.index-heading{
-  background-color: #f9f5f0;
-  color: #32425c;
-  font: normal 30px/30px "Cuprum", Arial, sans-serif;
-  text-transform: uppercase;
+.features{
+  background-color: #ccc;
+  min-height: 410px;
+  margin-top: 60px;
 }
+/*Хлебные крошки*/
+.breadcrumbs-list{
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 5px 0;
+  min-height: 50px;
+}
+.breadcrumbs-item{
+  padding-right: 15px;
+}
+.breadcrumbs-link:hover{
+  color: #ee3643;
+}
+.breadcrumbs-link:active{
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*Заголовок catalog*/
 .section-heading{
   background-color: #f2f6f8;
   color: #32425c;
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
   text-transform: uppercase;
 }
 
+/*Обертка контента для catalog*/
+.main-wrap{
+  display: flex;
+  margin-top: 20px;
+}
+.content-wrap{
+  margin-left: 20px;
+  width: 700px;
+}
 /*Фильтр для catalog*/
 .filter{
   font: normal 15px/20px "PT Sans", Arial, sans-serif;
+  width: 220px;
 }
 .filter-heading{
   background-color: #f7f3ec;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
   font-size: 13px;
+  font-weight: normal;
   line-height: 18px;
+  margin: 0;
+  min-height: 38px;
+  padding-left: 12px;
   text-transform: uppercase;
 }
+
 .filter-section{
   border: none;
+  border-bottom: 1px solid #e5e5e5;
   color: #000;
   text-transform: uppercase;
+  padding: 0;
+}
+.filter-supply{
+  border-bottom: none;
 }
 .filter-legend{
   font-weight: bold;
   font-size: 17px;
   line-height: 30px;
+  margin: 0;
+  padding: 18px 0 18px 0;
 }
 .filter-label{
   font-size: 15px;
   line-height: 20px;
+  margin-bottom: 15px;
+}
+.filter-range{
+  min-height: 208px;
 }
 .price-range,
 .min-price,
 .max-price{
   background-color: #f7f3ec;
 }
+.filter-label{
+  display: block;
+}
 .filter-show{
+  align-items: center;
   background-color: transparent;
-  color: #000;
-  font-size: 13px;
-  line-height: 18px;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
+  color: #000;
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  line-height: 18px;
+  margin-top: 60px;
+  min-height: 38px;
+  outline: 0;
+  text-transform: uppercase;
+  width: 140px;
+}
+.filter-show:hover{
+  background-color: #e5e5e5;
+}
+.filter-show:active{
+  background-color: transparent;
+  border-color: transparent;
 }
 .filter-section input:disabled{
   color: rgba(0, 0, 0, 0.4);
@@ -294,21 +431,35 @@ a {
 /*Сортировка*/
 .sort{
   background-color: #f7f3ec;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
   font: normal 13px/18px "PT Sans", Arial, sans-serif;
+  justify-content: space-between;
+  margin: 0;
+  min-height: 38px;
+  padding: 0 8px;
   text-transform: uppercase;
 }
 .sort-heading{
   color: #000;
   font: inherit;
+  padding: 0 10px;
 }
 .sort-list{
+  display: flex;
+  align-items: center;
   list-style: none;
   padding: 0;
+}
+.sort-item{
+  /*padding: 0 35px;*/
 }
 .sort-link{
   border-bottom: 1px dotted #ee3643;
   color: rgba(0, 0, 0, 0.3);
   font: inherit;
+  margin: 0 35px;
 }
 .sort-link:hover{
   border-bottom: 1px solid #ee3643;
@@ -318,98 +469,257 @@ a {
   border: none;
   color: #ee3643;
 }
+.sort-up,
+.sort-down{
+  display: block;
+  margin: 0 9px;
+  height: 12px;
+}
+.sort-up{
+  width: 0;
+  height: 0;
+  border-top: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid rgba(0, 0, 0, 0.3);
+}
+.sort-up:hover{
+  border-bottom: 12px solid rgba(0, 0, 0, 1);
+}
+.sort-up:active{
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid #ee3643;
+}
+.sort-down{
+  width: 0;
+  height: 0;
+  border-bottom: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid rgba(0, 0, 0, 0.3);
+}
+.sort-down:hover{
+  border-bottom: none;
+  border-top: 12px solid rgba(0, 0, 0, 1);
+}
+.sort-down:active{
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid #ee3643;
+}
+
+/*Заголовки*/
+.index-heading{
+  align-items: center;
+  background-color: #f9f5f0;
+  color: #32425c;
+  display: flex;
+  font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  justify-content: space-between;
+  margin: 0;
+  min-height: 89px;
+  padding: 0 24px 0 28px;
+  text-transform: uppercase;
+}
+.index-heading .btn{
+  width: 253px;
+}
 
 /*Карточки товаров*/
+.popular-products{
+  margin-top: 53px;
+}
 .popular-products ul,
 .product-cards ul{
   list-style: none;
+  margin: 0;
   padding: 0;
 }
-.product-list{
+.popular-products .product-list,
+.product-cards .product-list{
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 .product-item{
-  border: 1px solid #eaeaea;
-  margin: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 318px;
+  outline: 1px solid #eaeaea;
   width: 220px;
 }
 .product-item:hover{
-  border: none;
+  outline: none;
   box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
 }
 .product-list{
   font: bold 18px/20px "PT Sans", Arial, sans-serif;
 }
+.product-actions{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 170px;
+}
 .product-actions .product-link{
+  border-radius: 3px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 18px;
-  border-radius: 3px;
+  min-height: 33px;
+  width: 129px;
 }
 .product-pay .product-link{
   background-color: #63a63e;
+  border-bottom: 3px solid #367315;
   color: #fff;
+  margin-bottom: 8px;
+  min-height: 35px;
+  width: 133px;
 }
 .product-pay .product-link:hover{
   background-color: #5fbb2d;
 }
 .product-pay .product-link:active{
   background-color: #518534;
+  border-bottom-color: transparent;
 }
 .product-mark .product-link{
+  background-color: #fff;
   border: 3px solid #63a63e;
   color: #32425c;
 }
 .product-mark .product-link:hover{
-  border: 3px solid #32425c;
+  border-color: #32425c;
   color: #32425c;
 }
 .product-mark .product-link:active{
-  border: 3px solid rgba(50, 66, 92, 0.3);
+  border-color: rgba(50, 66, 92, 0.3);
   color: rgba(50, 66, 92, 0.3);
 }
-.product-list .old-price{
+.product-item{
+  margin-bottom: 20px;
+}
+.product-item .product-name{
+  display: inline-block;
+  margin: 10px 0;
+  text-align: center;
+  width: 180px;
+}
+.product-item .old-price{
+  display: inline-block;
   color: #a9a9a9;
   font: 700 17px/18px "PT Sans", Arial, sans-serif;
 }
-.product-list .new-price{
-  display: block;
+.product-item .new-price{
+  align-items: center;
+  display: flex;
   font: bolder 17px/18px "PT Sans", Arial, sans-serif;
+  justify-content: center;
+  margin: auto 0 20px 0;
   width: 120px;
 }
 
 /*Популярные производители*/
 .pop-fabric-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
 }
+.pop-fabric-item{
+  margin-bottom: 20px;
+  outline: 1px solid #eaeaea;
+}
+.pop-fabric-item:hover{
+  box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
+  outline: none;
+}
+.pop-fabric-item:active{
+  opacity: 0.3;
+}
+.pop-fabric-item .pop-fabric-link{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 143px;
+  width: 218px;
+}
+ /*Сервисы*/
+.services{
+  background-color: #f4f8fa;
+  min-height: 520px;
+}
 
 /*Доставка и контакты*/
+.company-info{
+  display: flex;
+  justify-content: space-between;
+  min-height: 536px;
+}
 .delivery-heading,
 .contacts-heading{
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  margin-top: 78px;
   text-transform: uppercase;
 }
 .delivery-text,
 .contacts-caption{
   font: normal 13px/24px "PT Sans", Arial, sans-serif;
+  margin: 34px 0 0 0;
+}
+.delivery-text{
+  width: 540px;
 }
 .delivery-list{
   font: normal 18px/20px "Cuprum", Arial, sans-serif;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 300px;
+}
+.delivery-item{
+  margin: 20px 0 0 0;
+}
+.delivery-btn{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 40px;
+  width: 200px;
+}
+.contacts-caption{
+  width: 220px;
+}
+.contacts .map-address{
+  display: block;
+  margin-top: 40px;
+}
+.contacts-btn{
+  margin-top: 40px;
 }
 
 /*Линки карточек*/
+.card-links-section{
+  padding-top: 32px;
+  display: flex;
+}
 .card-link{
+  align-items: center;
   background-color: transparent;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   color: #000;
-  display: table-cell;
+  display: flex;
   font: normal 13px/18px "PT Sans", Arial, sans-serif;
-  height: 38px;
+  justify-content: center;
+  min-height: 38px;
+  margin-right: 10px;
   text-align: center;
   vertical-align: middle;
   width: 38px;
@@ -430,14 +740,20 @@ a {
 
 /*Описание раздела*/
 .page-caption{
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
   background-color: #f2f6f8;
+  margin-top: 60px;
 }
 .page-caption-heading{
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
+  margin: 60px 0 30px 0;
+  /*padding: 0;*/
   text-transform: uppercase;
 }
 .page-caption-text{
   font: normal 13px/24px "PT Sans", Arial, sans-serif;
+  margin: 0 0 70px 0;
 }
 
 /*footer*/
@@ -456,60 +772,122 @@ a {
   opacity: 0.5;
   text-decoration: none;
 }
+
+/*footer-top*/
+.footer-top .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .footer-top .logo{
+  display: inline-block;
   height: 63px;
   line-height: 63px;
+}
+.footer-top .navigation{
+  display: flex;
+  margin: 0;
+}
+.footer-top .navigation-item{
+  margin: 0 0 5px 60px;
 }
 .footer-top .navigation-link{
   color: #f1f5f7;
 }
 
+/*footer-middle*/
+.footer-middle{
+  margin-top: 34px;
+}
+.footer-middle .container{
+  display: flex;
+  justify-content: space-between;
+}
 .footer-middle address{
   color: #f3f7f9;
   font: normal 18px/20px "Cuprum", Arial, sans-serif;
+}
+.footer-middle .services-nav{
+  display: flex;
+  margin: 0;
+}
+.footer-middle .services-nav-item{
+  margin-left: 60px;
 }
 .footer-middle .services-nav-link{
   color: #ffd180;
 }
 
+/*footer-bottom*/
 .footer-bottom{
   background-color: #293449;
+  border: 1px solid transparent;
+  margin-top: 50px;
 }
 .footer-bottom p{
   color: #fff;
   font-size: 16px;
   line-height: 18px;
+  margin: 0;
 }
 .footer-bottom a{
   color: #ffd180;
+}
+.footer-bottom .container{
+  display: flex;
+  padding: 35px 0 30px 0;
+}
+
+.company-rights{
+  max-width: 240px;
+}
+
+.footer-bottom .social-links-wrap{
+  display: flex;
+  justify-content: center;
+  margin-left: 145px;
 }
 .footer-bottom .social-link{
   border-radius: 50%;
   background-color: #212a3a;
   background-repeat: no-repeat;
   background-position: center;
-  display: inline-block;
+  display: block;
   height: 42px;
+  margin-left: 5px;
   width: 42px;
 }
 .footer-bottom .social-link:hover,
 .footer-bottom .social-link:active{
   background-color: #ee3643;
 }
+.footer-bottom .vk{
+  background-image: url("../img/icon-vk.svg");
+}
+.footer-bottom .fb{
+  background-image: url("../img/icon-fb.svg");
+}
+.footer-bottom .ig{
+  background-image: url("../img/icon-insta.svg");
+}
+
 .footer-bottom .footer-link:active{
   color: #ee3643;
   opacity: 1;
 }
-.vk{
-  background-image: url("../img/icon-vk.svg");
+.feedback-author-wrap{
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  width: 310px;
 }
-.fb{
-  background-image: url("../img/icon-fb.svg");
+.feedback-capt,
+.author{
+  padding: 0 10px;
 }
-.ig{
-  background-image: url("../img/icon-insta.svg");
+.footer-link{
+  display: block;
 }
-
 
 /*Попапы*/
 .feedback-message,
