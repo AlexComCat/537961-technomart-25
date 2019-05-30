@@ -43,15 +43,18 @@ a {
 .logo{
   background-color: #ee3643;
   box-shadow: 0 5px 0 0 #b52933;
-  display: block;
+  display: inline-block;
   text-align: center;
   width: 220px;
 }
 .logo:hover{
   background-color: #ca2c37;
+  box-shadow: 0 5px 0 0 #9a212a;
 }
 .logo:active{
   background-color: #ba2732;
+  box-shadow: 0 5px 0 0 #8e1e26;
+
 }
 .logo img{
   vertical-align: middle;
@@ -67,73 +70,116 @@ a {
 .header-top{
   background-color: #293449;
   min-height: 42px;
-  margin-bottom: 45px;
 }
 .header-top .container{
   display: flex;
+  flex-wrap: wrap;
 }
 .header-top .logo{
-  height: 100%;
+  flex-shrink: 0;
+  min-height: 42px;
   line-height: 42px;
 }
+/*форма поиска*/
 .search-form{
   position: relative;
+}
+.search-form:hover{
+  background-color: #212a3a;
+}
+.search-form:hover .search-icon path{
+  fill: rgba(255, 255, 255, 1);
 }
 .search-input{
   background-color: transparent;
   border: none;
-  height: 40px;
-  padding-left: 48px;
-  width: 270px;
+  color: #fff;
+  padding: 11px 10px 13px 49px;
+  min-width: 210px;
 }
-.search-input:hover{
-  background-color: #212a3a;
+.search-input::placeholder{
+  color: #fff;
 }
 .search-input:focus{
   background-color: #fff;
   color: #000;
   outline: none;
 }
-.search-btn{
-  background: url("../img/icon-search.svg") transparent no-repeat center;
-  border: none;
-  color: inherit;
-  font: inherit;
-  height: 42px;
-  left: 0;
-  padding: 0;
+.search-input:focus ~ .search-icon path{
+  fill: #ee3643;
+}
+.search-icon{
   position: absolute;
-  opacity: 0.3;
-  top: 0;
-  width: 48px;
+  top: 12px;
+  left: 18px;
 }
-.search-btn:hover{
-  opacity: 1;
-  border: none;
+.search-icon path{
+  fill: rgba(255, 255, 255, 0.3);
 }
+/*кнопки верхней части шапки*/
 .header-top-link{
-  align-items: center;
   background-position: 17px 50%;
   background-repeat: no-repeat;
-  display: flex;
+  box-sizing: border-box;
   color: #fff;
-  height: 42px;
-  justify-content: center;
+  display: block;
   line-height: 18px;
+  padding: 12px 20px;
+  position: relative;
+  vertical-align: middle;
   width: 150px;
 }
-.header-top-link:hover{
-  background-color: #212a3a;
-}
 .header-top-link:active{
-  background-color: #161d29;
   color: rgba(255, 255, 255, 0.6);
 }
 .mark{
+  padding-left: 45px;
+}
+.mark::before{
+  content: "";
   background-image: url("../img/icon-bookmark.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 16px;
+  left: 17px;
+  opacity: 0.3;
+  position: absolute;
+  top: 12px;
+  width: 14px;
 }
 .basket{
+  padding-left: 50px;
+}
+.basket::before{
+  content: "";
   background-image: url("../img/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 15px;
+  left: 18px;
+  opacity: 0.3;
+  position: absolute;
+  top: 12px;
+  width: 15px;
+}
+.basket-full{
+  background-color: #ee3643 ;
+}
+.mark:hover,
+.basket:hover{
+  background-color: #212a3a;
+}
+.mark:active,
+.basket:active{
+  background-color: #161d29;
+}
+.mark:hover::before,
+.basket:hover::before{
+  opacity: 1;
+}
+.mark:active::before,
+.basket:active::before{
+  opacity: 0.5;
 }
 .order{
   background-color: #63a63e;
@@ -147,54 +193,59 @@ a {
 
 /*Средняя часть шапки*/
 .header-middle{
-  margin-bottom: 30px;
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
 }
 .header-middle .site-heading{
   font: italic 16px/23px "Cuprum", Arial, sans-serif;
   color: #ee3643;
-  margin: 0;
-  padding: 0 50px;
-  width: 200px;
+  display: inline-block;
+  margin: 0 0 0 32px;
+  padding: 3px 20px;
+  width: 198px;
 }
-.header-middle .address{
-  color: #32425c;
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0;
+.header-middle .address-box{
+  margin: 0 0 0 50px;
+  width: 270px;
 }
-.address{
-  text-align: center;
-}
-.address .telephone{
-  align-items: center;
+.address-box .telephone{
   background: url("../img/icon-phone.svg") no-repeat 12px 50%;
   border: 3px solid #fff;
-  display: flex;
+  display: inline-block;
   color: #ee3643;
   font-size: 21px;
-  height: 39px;
-  justify-content: center;
-  line-height: 21px;
-  width: 264px;
+  padding: 10px 42px 10px 71px;
+  line-height: 20px;
+  width: 150px;
+}
+.address{
+  color: #32425c;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 4px 5px 0 10px;
 }
 
 /*Блок регистрации для index*/
 .registration{
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0 0 0 auto;
   padding: 0;
 }
+.reg-item{
+  margin-left: 10px;
+}
 .registration .reg-link{
-  align-items: center;
   background-color: #fff;
   color: #000;
-  display: flex;
+  display: inline-block;
   font-size: 21px;
-  justify-content: center;
   line-height: 21px;
-  min-height: 45px;
+  padding: 12px 24px;
+  position: relative;
 }
 .registration .reg-link:hover{
   color: #ee3643;
@@ -202,12 +253,25 @@ a {
 .registration .reg-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
-.log-in .reg-link{
-  width: 121px;
+.reg-link.log-in{
+  padding-left: 48px;
+  width: 50px;
 }
-.register .reg-link{
-  margin-left: 10px;
-  width: 150px;
+.reg-link.log-in::before{
+  content: "";
+  background: url("../img/icon-login.svg") no-repeat 0 0;
+  height: 17px;
+  left: 15px;
+  opacity: 0.3;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+.reg-link.log-in:hover::before{
+  opacity: 1;
+}
+.reg-link.reg-in{
+  width: 102px;
 }
 
 /*Блок учетной записи для catalog*/
@@ -217,33 +281,59 @@ a {
 }
 .account-link-wrap{
   display: flex;
-}
-.account-link-wrap .account-link{
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  display: flex;
-  font-size: 21px;
-  justify-content: center;
-  line-height: 21px;
-  min-height: 45px;
-
-}
-.account-link-wrap .account-link:active{
-  color: rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  position: relative;
 }
 .account-btn{
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 21px;
+  line-height: 21px;
+  padding: 12px 10px 12px 48px;
+  position: relative;
   width: 255px;
 }
+.account-btn:active{
+  color: rgba(0, 0, 0, 0.3);
+}
+.account-btn::before{
+  background: url("../img/icon-user.svg") no-repeat center;
+  content: "";
+  height: 18px;
+  left: 14px;
+  opacity: 0.3;
+  position: absolute;
+  top: 13px;
+  width: 20px;
+}
+.account-btn:hover::before{
+  opacity: 1;
+}
+.account-btn:active::before{
+  opacity: 0.3;
+}
 .log-out{
-  background: url("../img/icon-logout.svg") no-repeat center;
+  background: url("../img/icon-logout.svg") no-repeat 14px 14px;
+  right: 0;
+  min-height: 45px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
   width: 45px;
 }
-
+.log-out:hover{
+  opacity: 1;
+}
+.log-out:active{
+  opacity: 0.3;
+}
 .account-list{
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 0 4px;
+  width: 300px;
 }
 .account-list li{
   list-style: none;
@@ -251,9 +341,11 @@ a {
 .account-list .account-link{
   background-color: transparent;
   color: #32425c;
+  display: inline-block;
   font-size: 16px;
   line-height: 24px;
-  padding: 0 14px 0 18px;
+  padding: 4px 17px 0px 15px;
+  position: relative;
   text-decoration: underline;
 }
 .account-list .account-link:hover{
@@ -262,27 +354,38 @@ a {
 .account-list .account-link:active{
   color: rgba(0, 0, 0, 0.3);
 }
-
+.account-link::after{
+  background-color: #32425c;
+  border-radius: 50%;
+  content: "";
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  width: 4px;
+}
+.account-item:last-child .account-link::after{
+  background-color: transparent;
+}
 /*Навигация сайта*/
 .site-navigation{
-  margin-bottom: 60px;
+  margin-top: 37px;
+  margin-bottom: 58px;
 }
 .nav-list{
   background-color: #32425c;
   border-bottom: 5px solid #293449;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  min-height: 55px;
-  padding: 0;
+  padding: 0 5px 0 5px;
 }
 .nav-item .nav-link{
-  display: flex;
-  height: 100%;
   color: #fff;
-  padding: 0 30px;
-  align-items: center;
+  display: inline-block;
+  padding: 20px 30px 18px 30px;
+
 }
 .nav-item .nav-link:hover{
   background-color: #293449;
@@ -290,6 +393,9 @@ a {
 .nav-item .nav-link:active{
   background-color: #1d2739;
   color: rgba(255, 255, 255, 0.5);
+}
+.nav-list:first-child{
+  padding: 0 25px 0 25px;
 }
 
 /*Хлебные крошки для catalog*/
@@ -780,7 +886,6 @@ a {
   align-items: flex-end;
 }
 .footer-top .logo{
-  display: inline-block;
   height: 63px;
   line-height: 63px;
 }
