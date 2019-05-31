@@ -644,7 +644,7 @@ a {
   padding: 0;
 }
 .popular-products .product-list,
-.popular-cards .product-list{
+.product-cards .product-list{
   display: flex;
   flex-wrap: wrap;
   font: bold 18px/20px "PT Sans", Arial, sans-serif;
@@ -665,7 +665,7 @@ a {
 .popular-products .product-item:nth-child(4n){
   margin-right: 0;
 }
-.popular-cards .product-item:nth-child(3n){
+.product-cards .product-item:nth-child(3n){
   margin-right: 0;
 }
 .product-item:hover{
@@ -745,7 +745,8 @@ a {
   width: 218px;
 }
 .product-item .product-img img {
-  max-width: 100%;
+  height: 170px;
+  width: 218px;
 }
 
 .product-item .product-title {
@@ -803,17 +804,20 @@ a {
 .pop-fabric-list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   list-style: none;
+  margin-top: 20px;
   padding: 0;
 }
 .pop-fabric-item{
-  margin-bottom: 20px;
-  outline: 1px solid #eaeaea;
+  margin: 0 20px 20px 0;
+  padding: 0;
+  border: 1px solid #eaeaea;
+}
+.pop-fabric-item:nth-child(4n){
+  margin-right: 0;
 }
 .pop-fabric-item:hover{
   box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
-  outline: none;
 }
 .pop-fabric-item:active{
   opacity: 0.3;
@@ -822,60 +826,91 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
-  min-height: 143px;
+  height: 143px;
   width: 218px;
+}
+.pop-fabric-item .pop-fabric-link img{
+  max-height: 141px;
+  max-width: 216px;
 }
  /*Сервисы*/
 .services{
   background-color: #f4f8fa;
-  min-height: 520px;
+  margin-top: 65px;
+  min-height: 522px;
 }
 
 /*Доставка и контакты*/
 .company-info{
   display: flex;
   justify-content: space-between;
-  min-height: 536px;
+  min-height: 516px;
+  padding-bottom: 20px;
 }
 .delivery-heading,
 .contacts-heading{
+  display: inline-block;
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
-  margin-top: 78px;
+  margin: 80px 0 0 0;
   text-transform: uppercase;
 }
 .delivery-text,
 .contacts-caption{
+  display: inline-block;
   font: normal 13px/24px "PT Sans", Arial, sans-serif;
-  margin: 34px 0 0 0;
+  margin: 24px 0 0 0;
 }
 .delivery-text{
   width: 540px;
 }
+.delivery-text.delivery-info{
+  width: 400px;
+}
 .delivery-list{
+  display: inline-block;
   font: normal 18px/20px "Cuprum", Arial, sans-serif;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 22px 0 0 0;
   width: 300px;
 }
 .delivery-item{
-  margin: 20px 0 0 0;
+  display: block;
+  width: 540px;
+  padding-left: 36px;
+  position: relative;
+  margin: 0 0 20px 0;
+}
+.delivery-item::before{
+  background-color: #ee3643;
+  content: "";
+  height: 2px;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 25px;
 }
 .delivery-btn{
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 40px;
+  margin-top: 16px;
   width: 200px;
 }
 .contacts-caption{
+  margin: 0;
+  margin-top: 25px;
   width: 220px;
 }
 .contacts .map-address{
   display: block;
-  margin-top: 40px;
+  margin-top: 30px;
+}
+.contacts .map-address img{
+  height: 158px;
+  width: 300px;
 }
 .contacts-btn{
-  margin-top: 40px;
+  margin-top: 38px;
 }
 
 /*Линки карточек*/
