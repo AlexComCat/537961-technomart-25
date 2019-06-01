@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Техномарт</title>
@@ -67,7 +67,16 @@
         <section class="breadcrumbs">
           <h2 class="visually-hidden">Навигационная цепочка</h2>
           <ul class="breadcrumbs-list">
-            <li class="breadcrumbs-item"><a href="index.html" class="breadcrumbs-link">главная</a></li>
+            <li class="breadcrumbs-item breadcrumbs-home">
+              <a href="index.html" class="breadcrumbs-link" aria-label="главная">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12">
+                  <g fill="#C1C6CE">
+                    <path d="M3 8v4h4V8h2v4h4V8L8 3.516z"/>
+                    <path d="M14.831 6.365L13 4.751V0h-2v2.987L8.332.635c-.02-.017-.043-.023-.064-.037a.465.465 0 0 0-.08-.047.551.551 0 0 0-.095-.024C8.062.521 8.032.515 8 .515c-.031 0-.061.006-.092.012a.46.46 0 0 0-.095.025c-.028.011-.053.029-.08.046-.021.014-.045.02-.064.037l-6.498 5.73a.501.501 0 0 0 .33.875.497.497 0 0 0 .331-.125L8 1.677l6.169 5.438a.501.501 0 0 0 .662-.75z"/>
+                  </g>
+                </svg>
+              </a>
+            </li>
             <li class="breadcrumbs-item"><a href="catalog.html" class="breadcrumbs-link">каталог</a></li>
             <li class="breadcrumbs-item"><a href="#" class="breadcrumbs-link">инструмент</a></li>
             <li class="breadcrumbs-item"><a href="#" class="breadcrumbs-link">перфораторы</a></li>
@@ -82,46 +91,56 @@
             <form action="#" class="filter-form">
               <fieldset class="filter-section filter-range">
                 <legend class="filter-legend">цена:</legend>
-                <input type="range" id="price-range" class="price-range" min="0" max="35000" step="100" value="30000">
-                <label for="price-range" class="filter-label"></label>
-                <p>
-                  <span class="min-price">0</span>
-                  -
-                  <span class="max-price">30000</span>
+                <div class="price-range-wrap">
+                  <input type="range" id="price-range" class="price-range" min="0" max="35000" step="100" value="30000">
+                </div>
+                <p class="price-box">
+                  <span class="min-price price">0</span>
+                  &mdash;
+                  <span class="max-price price">30000</span>
                 </p>
               </fieldset>
+
               <fieldset class="filter-section filter-fabric">
                 <legend class="filter-legend">производители:</legend>
-                <label class="filter-label">
-                  <input type="checkbox" name="bosch" checked>
+                <label class="filter-label filter-fabric-label">
+                  <input type="checkbox" class="filter-input" name="bosch">
+                  <span class="filter-new-input"></span>
                   bosch
                 </label>
-                <label class="filter-label">
-                  <input type="checkbox" name="interskol" checked>
+                <label class="filter-label filter-fabric-label">
+                  <input type="checkbox" class="filter-input" name="interskol">
+                  <span class="filter-new-input"></span>
                   интерскол
                 </label>
-                <label class="filter-label">
-                  <input type="checkbox" name="makita" checked>
+                <label class="filter-label filter-fabric-label">
+                  <input type="checkbox" class="filter-input" name="makita">
+                  <span class="filter-new-input"></span>
                   makita
                 </label>
-                <label class="filter-label">
-                  <input type="checkbox" name="dewalt" checked>
+                <label class="filter-label filter-fabric-label">
+                  <input type="checkbox" class="filter-input" name="dewalt">
+                  <span class="filter-new-input"></span>
                   dewalt
                 </label>
-                <label class="filter-label">
-                  <input type="checkbox" name="hitachi" checked>
+                <label class="filter-label filter-fabric-label">
+                  <input type="checkbox" class="filter-input" name="hitachi">
+                  <span class="filter-new-input"></span>
                   hitachi
                 </label>
               </fieldset>
+
               <fieldset class="filter-section filter-supply">
                 <legend class="filter-legend">питание:</legend>
                 <label class="filter-label">
-                  <input type="radio" name="filter-power-group" value="filter-battery" checked>
+                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-battery">
+                  <span class="filter-new-input"></span>
                   аккумуляторные
                 </label>
 
                 <label class="filter-label">
-                  <input type="radio" name="filter-power-group" value="filter-network">
+                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-network">
+                  <span class="filter-new-input"></span>
                   сетевые
                 </label>
               </fieldset>
@@ -273,8 +292,9 @@
       <section class="page-caption">
         <div class="container">
           <h3 class="page-caption-heading">пара слов о перфораторах</h3>
-          <p class="page-caption-text">Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
-            Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
+          <p class="page-caption-text">Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
+            Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.
+            В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
           </p>
         </div>
       </section>
@@ -325,7 +345,7 @@
               <a href="feedback.html" class="footer-link" aria-label="Форма обратной связи">mail@htmlacademy.ru</a>
             </p>
             <p class="author">
-              Разработано -
+              Разработано &mdash;
               <a href="https://www.htmlacademy.ru/" class="footer-link" aria-label="Сервис htmlacademy">htmlacademy.ru</a>
             </p>
           </div>

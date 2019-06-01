@@ -368,6 +368,7 @@ a {
 .account-item:last-child .account-link::after{
   background-color: transparent;
 }
+
 /*Навигация сайта*/
 .site-navigation{
   margin-top: 37px;
@@ -399,16 +400,6 @@ a {
   padding: 0 25px 0 25px;
 }
 
-/*Хлебные крошки для catalog*/
-.breadcrumbs-list{
-  list-style: none;
-}
-.breadcrumbs-link{
-  color: #000;
-  font: normal 13px/18px "PT Sans", Arial, sans-serif;
-  text-transform: uppercase;
-}
-
 
 /*Контент*/
 .main-content{
@@ -423,12 +414,45 @@ a {
 .breadcrumbs-list{
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  list-style: none;
   margin: 0;
   padding: 5px 0;
   min-height: 50px;
 }
 .breadcrumbs-item{
-  padding-right: 15px;
+  display: inline-block;
+  position: relative;
+}
+.breadcrumbs-item::before{
+  background: url("../img/icon-right-small.svg") no-repeat center;
+  content: "";
+  height: 12px;
+  left: -8px;
+  position: absolute;
+  top: 3px;
+  width: 8px;
+}
+.breadcrumbs-link{
+  display: inline-block;
+  color: #000;
+  font: normal 13px/18px "PT Sans", Arial, sans-serif;
+  padding: 0 26px 0 15px;
+  text-transform: uppercase;
+}
+.breadcrumbs-home .breadcrumbs-link{
+  height: 12px;
+  padding-left: 0;
+  width: 14px;
+}
+.breadcrumbs-home:hover svg path{
+  fill: #ee3643;
+}
+.breadcrumbs-home:active svg path{
+  fill: rgba(0, 0, 0, 0.3);
+}
+.breadcrumbs-home::before{
+  background: transparent;
 }
 .breadcrumbs-link:hover{
   color: #ee3643;
@@ -464,23 +488,24 @@ a {
 .filter-heading{
   background-color: #f7f3ec;
   border-radius: 3px;
-  display: flex;
-  align-items: center;
+  display: block;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
   margin: 0;
-  min-height: 38px;
-  padding-left: 12px;
+  min-height: 20px;
+  padding: 9px 19px;
   text-transform: uppercase;
 }
 
 .filter-section{
   border: none;
   border-bottom: 1px solid #e5e5e5;
+  display: block;
   color: #000;
   text-transform: uppercase;
-  padding: 0;
+  padding: 0 0 0 0;
+  margin: 7px 0 0 0;
 }
 .filter-supply{
   border-bottom: none;
@@ -490,24 +515,84 @@ a {
   font-size: 17px;
   line-height: 30px;
   margin: 0;
-  padding: 18px 0 18px 0;
-}
-.filter-label{
-  font-size: 15px;
-  line-height: 20px;
-  margin-bottom: 15px;
+  padding: 10px 0 14px 0;
 }
 .filter-range{
-  min-height: 208px;
+  margin: 0;
+  min-height: 195px;
 }
-.price-range,
-.min-price,
-.max-price{
+.price-range-wrap{
+  border-radius: 3px;
+  min-height: 80px;
+  width: 220px;
+}
+.price-range-wrap,
+.price{
   background-color: #f7f3ec;
 }
-.filter-label{
-  display: block;
+.price-box{
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 17px;
+  line-height: 18px;
+  margin: 0;
+  padding: 8px 0 25px 0;
 }
+.price{
+  display: block;
+  padding: 9px 5px;
+  text-align: center;
+  min-height: 20px;
+  width: 85px;
+}
+
+.filter-label{
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 35px 20px 35px;
+  position: relative;
+}
+.filter-input{
+  display: none;
+}
+.filter-new-input {
+  background: url("../img/checkbox-off.svg") no-repeat left;
+  height: 27px;
+  position: absolute;
+  top: -5px;
+  left: -35px;
+  width: 27px;
+}
+
+/*Фильтр по производителю*/
+.filter-fabric .filter-new-input {
+  background: url("../img/checkbox-off.svg") no-repeat left;
+  height: 27px;
+  position: absolute;
+  top: -3px;
+  left: -35px;
+  width: 27px;
+}
+.filter-fabric .filter-input:checked + .filter-new-input{
+  background: url("../img/checkbox-on.svg") no-repeat left;
+}
+
+/*Фильтр по питанию*/
+.filter-supply{
+  margin-top: 10px;
+}
+.filter-supply .filter-new-input{
+  background: url("../img/radio-off.svg") no-repeat left;
+}
+.filter-supply .filter-input:checked + .filter-new-input{
+  background: url("../img/radio-on.svg") no-repeat left;
+}
+
+/*Кнопка фильтра */
 .filter-show{
   align-items: center;
   background-color: transparent;
@@ -515,10 +600,11 @@ a {
   border-radius: 3px;
   color: #000;
   display: flex;
+  flex-wrap: wrap;
   font-size: 13px;
   justify-content: center;
   line-height: 18px;
-  margin-top: 60px;
+  margin-top: 57px;
   min-height: 38px;
   outline: 0;
   text-transform: uppercase;
@@ -535,38 +621,42 @@ a {
   color: rgba(0, 0, 0, 0.4);
 }
 
-/*Сортировка*/
+/*--Сортировка--*/
 .sort{
   background-color: #f7f3ec;
   border-radius: 3px;
   display: flex;
-  align-items: center;
-  font: normal 13px/18px "PT Sans", Arial, sans-serif;
+  flex-wrap: wrap;
   justify-content: space-between;
+  font: normal 13px/18px "PT Sans", Arial, sans-serif;
   margin: 0;
-  min-height: 38px;
-  padding: 0 8px;
+  min-height: 18px;
+  padding: 10px;
   text-transform: uppercase;
 }
 .sort-heading{
+  display: block;
   color: #000;
   font: inherit;
+  margin: 0;
   padding: 0 10px;
+  width: 140px;
 }
 .sort-list{
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   list-style: none;
+  margin: 0 0 0 auto;
+  max-width: 516px;
   padding: 0;
-}
-.sort-item{
-  /*padding: 0 35px;*/
 }
 .sort-link{
   border-bottom: 1px dotted #ee3643;
   color: rgba(0, 0, 0, 0.3);
   font: inherit;
-  margin: 0 35px;
+  margin: 0 36px 0 32px;
 }
 .sort-link:hover{
   border-bottom: 1px solid #ee3643;
@@ -579,7 +669,7 @@ a {
 .sort-up,
 .sort-down{
   display: block;
-  margin: 0 9px;
+  margin: 0 8px 0 10px;
   height: 12px;
 }
 .sort-up{
@@ -915,7 +1005,7 @@ a {
 
 /*Линки карточек*/
 .card-links-section{
-  padding-top: 32px;
+  padding-top: 30px;
   display: flex;
 }
 .card-link{
@@ -927,11 +1017,13 @@ a {
   display: flex;
   font: normal 13px/18px "PT Sans", Arial, sans-serif;
   justify-content: center;
-  min-height: 38px;
+  min-height: 26px;
   margin-right: 10px;
+  padding: 5px;
   text-align: center;
+  text-transform: uppercase;
   vertical-align: middle;
-  width: 38px;
+  min-width: 26px;
 }
 .card-link:hover{
   border-color: #bdc6ca;
@@ -941,10 +1033,19 @@ a {
 }
 .current-card{
   background-color: #ee3643;
+  border-color: #ee3643;
   color: #fff;
 }
+.current-card:hover{
+  background-color: #ca2c37;
+  border-color: #ca2c37;
+}
+.current-card:active{
+  background-color: #ba2732;
+  border-color: #ba2732;
+}
 .card-link:last-child{
-  width: 140px;
+  min-width: 128px;
 }
 
 /*Описание раздела*/
@@ -955,14 +1056,16 @@ a {
   margin-top: 60px;
 }
 .page-caption-heading{
+  display: block;
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
-  margin: 60px 0 30px 0;
-  /*padding: 0;*/
+  padding: 0;
+  margin: 64px 0 25px 0;
   text-transform: uppercase;
 }
 .page-caption-text{
+  display: block;
   font: normal 13px/24px "PT Sans", Arial, sans-serif;
-  margin: 0 0 70px 0;
+  margin: 0 0 66px 0;
 }
 
 /*--footer--*/
