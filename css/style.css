@@ -965,7 +965,7 @@ a {
   margin: 0 0 70px 0;
 }
 
-/*footer*/
+/*--footer--*/
 .site-footer{
   background-color: #32425c;
   font: normal 18px/24px "Cuprum", Arial, sans-serif;
@@ -985,8 +985,8 @@ a {
 /*footer-top*/
 .footer-top .container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-end;
 }
 .footer-top .logo{
   height: 63px;
@@ -994,10 +994,14 @@ a {
 }
 .footer-top .navigation{
   display: flex;
-  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 38px 0 0 0;
+  max-width: 620px;
 }
 .footer-top .navigation-item{
-  margin: 0 0 5px 60px;
+  display: inline-block;
+  padding: 0 0 5px 59px;
 }
 .footer-top .navigation-link{
   color: #f1f5f7;
@@ -1005,7 +1009,7 @@ a {
 
 /*footer-middle*/
 .footer-middle{
-  margin-top: 34px;
+  margin-top: 19px;
 }
 .footer-middle .container{
   display: flex;
@@ -1013,14 +1017,21 @@ a {
 }
 .footer-middle address{
   color: #f3f7f9;
-  font: normal 18px/20px "Cuprum", Arial, sans-serif;
+  display: inline-block;
+  font: normal 18px/24px "Cuprum", Arial, sans-serif;
+  padding: 10px 4px;
+  max-width: 338px;
 }
 .footer-middle .services-nav{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 590px;
   margin: 0;
 }
 .footer-middle .services-nav-item{
-  margin-left: 60px;
+  display: inline-block;
+  padding: 10px 0 5px 60px;
 }
 .footer-middle .services-nav-link{
   color: #ffd180;
@@ -1030,7 +1041,7 @@ a {
 .footer-bottom{
   background-color: #293449;
   border: 1px solid transparent;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .footer-bottom p{
   color: #fff;
@@ -1043,17 +1054,21 @@ a {
 }
 .footer-bottom .container{
   display: flex;
-  padding: 35px 0 30px 0;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
-
 .company-rights{
+  display: inline-block;
   max-width: 240px;
+  padding: 15px 0 0 0;
 }
 
 .footer-bottom .social-links-wrap{
   display: flex;
-  justify-content: center;
-  margin-left: 145px;
+  flex-wrap: wrap;
+  margin-left: 136px;
+  max-width: 200px;
+  padding: 10px;
 }
 .footer-bottom .social-link{
   border-radius: 50%;
@@ -1062,7 +1077,7 @@ a {
   background-position: center;
   display: block;
   height: 42px;
-  margin-left: 5px;
+  margin: 2px 0 0 3px;
   width: 42px;
 }
 .footer-bottom .social-link:hover,
@@ -1085,13 +1100,17 @@ a {
 }
 .feedback-author-wrap{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-left: auto;
-  width: 310px;
+  padding: 15px 5px 10px 5px;
+  width: 300px;
 }
 .feedback-capt,
 .author{
-  padding: 0 10px;
+  display: inline-block;
+  padding: 0 10px 10px 5px;
+  max-width: 120px;
 }
 .footer-link{
   display: block;
