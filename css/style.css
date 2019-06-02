@@ -22,6 +22,8 @@ a {
   margin: 0 auto;
   padding: 0 10px;
 }
+
+/*Кнопка*/
 .btn{
   align-items: center;
   background-color: #ee3643;
@@ -41,6 +43,47 @@ a {
 .btn:active{
   background-color: #ba2732;
 }
+
+/*Кнопка закрытия формы*/
+.btn-close{
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.btn-close:before,
+.btn-close:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -2px;
+  width: 25px;
+  height: 4px;
+  background: #ee3643;
+}
+.btn-close:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn-close:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.btn-close:hover::before,
+.btn-close:hover::after{
+  background-color: #ca2c37;
+}
+.btn-close:active::before,
+.btn-close:active::after{
+  background-color: #ba2732;
+}
+
+/*Логотип*/
 .logo{
   background-color: #ee3643;
   box-shadow: 0 5px 0 0 #b52933;
@@ -1219,9 +1262,137 @@ a {
   display: block;
 }
 
-/*Попапы*/
-.feedback-message,
-.map-popup,
+/*--Попапы--*/
+
+/*Форма обратной связи*/
+.feedback-message{
+  border-top: 7px solid #ff5257;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  margin: 30px auto;
+  position: relative;
+  width: 620px;
+}
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form button{
+  outline: none;
+}
+.feedback-input-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 32px auto 0 auto;
+  width: 460px;
+}
+.feedback-label{
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  height: 70px;
+  margin-top: 15px;
+  padding: 0;
+  width: 220px;
+
+}
+.feedback-input,
+.feedback-text{
+  border:2px solid #dee3e4;
+  border-radius: 2px;
+  color: #a9a9a9;
+  font: normal 13px/18px "PT Sans", "Arial", sans-serif;
+  margin-top: 10px;
+  padding: 10px 12px;
+}
+.feedback-input:focus,
+.feedback-text:focus{
+  color: #000;
+}
+.feedback-input{
+  height: 12px;
+  width: 190px;
+}
+.feedback-text{
+  height: 95px;
+  padding: 8px 12px;
+  resize: none;
+  width: 430px;
+}
+.feedback-sent-wrap{
+  border-top: 1px solid transparent;
+  background-color: #f4f4f4;
+  height: 110px;
+  margin-top: 110px;
+  width: 620px;
+}
+.feedback-sent{
+  border-radius: 4px;
+  margin: 35px auto;
+  width: 460px;
+}
+
+/*Попап карты*/
+.map-popup{
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  height: 447px;
+  margin: 40px auto;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+  outline-offset: -1px;
+  overflow: hidden;
+  width: 940px;
+}
+.map-popup img{
+  width: 940px;
+}
+
+/*Попап добавления в корзину*/
 .order-message{
-  display: none;
+  border-top: 7px solid #ff5257;
+  box-shadow: 0 20px 40px 0 rgba(41, 52, 73, 0.75);
+  margin: 30px auto;
+  position: relative;
+  min-height: 275px;
+  width: 620px;
+}
+.order-heading{
+  display: block;
+  font: normal 30px/30px "Cuprum", "Arial", sans-serif;
+  margin: 45px auto 0 auto;
+  padding: 20px 10px 20px 100px;
+  position: relative;
+  width: 350px;
+}
+.order-heading::before{
+  background: url("../img/icon-mark.svg") no-repeat center;
+  bottom: 1px;
+  content: "";
+  position: absolute;
+  left: 1px;
+  height: 66px;
+  width: 66px;
+}
+.order-message-links{
+  align-items: center;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 48px;
+  min-height: 92px;
+}
+.order-message-links .btn{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 220px;
+}
+.order-message-links .continue-shopping{
+  background-color: #fff;
+  color: #000;
+}
+.order-message-links .continue-shopping:hover{
+  color: #ee3643;
+}
+.order-message-links .continue-shopping:active{
+  color: rgba(0, 0, 0, 0.3);
 }
