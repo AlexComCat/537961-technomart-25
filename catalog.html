@@ -21,7 +21,7 @@
             </svg>
           </form>
           <a href="#" class="header-top-link mark">Закладки: <span>0</span></a>
-          <a href="#" class="header-top-link basket basket-full">Корзина: <span>10</span></a>
+          <a href="#" class="header-top-link basket">Корзина: <span>10</span></a>
           <a href="#" class="header-top-link order">Оформить заказ</a>
         </div>
       </div>
@@ -89,16 +89,22 @@
           <section class="filter">
             <h3 class="filter-heading">фильтр:</h3>
             <form action="#" class="filter-form">
-              <fieldset class="filter-section filter-range">
+              <fieldset class="filter-section filter-price">
                 <legend class="filter-legend">цена:</legend>
-                <div class="price-range-wrap">
-                  <input type="range" id="price-range" class="price-range" min="0" max="35000" step="100" value="30000">
+                <div class="filter-price-filter">
+                  <div class="filter-price-control">
+                    <div class="filter-price-scale">
+                      <div class="filter-price-scale-bar"></div>
+                    </div>
+                    <div class="filter-price-scale-toggle filter-price-min-toggle"></div>
+                    <div class="filter-price-scale-toggle filter-price-max-toggle"></div>
+                  </div>
+                  <div class="filter-price-inputs">
+                    <input class="filter-price-min" type="text" value="0">
+                    <span class="filter-price-minus">—</span>
+                    <input class="filter-price-max" type="text" value="30 000">
+                  </div>
                 </div>
-                <p class="price-box">
-                  <span class="min-price price">0</span>
-                  &mdash;
-                  <span class="max-price price">30000</span>
-                </p>
               </fieldset>
 
               <fieldset class="filter-section filter-fabric">
@@ -133,7 +139,7 @@
               <fieldset class="filter-section filter-supply">
                 <legend class="filter-legend">питание:</legend>
                 <label class="filter-label">
-                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-battery">
+                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-battery" checked>
                   <span class="filter-new-input"></span>
                   аккумуляторные
                 </label>
@@ -346,7 +352,7 @@
             </p>
             <p class="author">
               Разработано &mdash;
-              <a href="https://www.htmlacademy.ru/" class="footer-link" aria-label="Сервис htmlacademy">htmlacademy.ru</a>
+              <a href="https://htmlacademy.ru/intensive/htmlcss" class="footer-link" aria-label="Сервис htmlacademy">htmlacademy.ru</a>
             </p>
           </div>
         </div>
@@ -362,5 +368,8 @@
       </div>
       <a href="#" class="order-message-close btn-close" aria-label="Закрыть окно"></a>
     </section>
+
+    <!--перекрытие body-->
+    <div class="overlay"></div>
   </body>
 </html>
