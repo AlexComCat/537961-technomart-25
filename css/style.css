@@ -1767,7 +1767,6 @@ a {
 .feedback-page{
   background-color: rgba(0, 0, 0, 0.75);
   height: 100%;
-  /*opacity: 0.6;*/
   width: 100%;
 }
 .feedback-message-page{
@@ -1834,6 +1833,31 @@ a {
 .order-message-show{
   display: block;
 }
+.order-message-page{
+  background-color: rgba(0, 0, 0, 0.75);
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.feedback-page{
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  width: 100%;
+}
+.feedback-message-page{
+  animation: popup-show 0.5s linear;
+  background-color: #fff;
+  border-top: 7px solid #ff5257;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  display: inline-block;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+}
+
 .order-heading{
   display: block;
   font: normal 30px/30px "Cuprum", "Arial", sans-serif;
