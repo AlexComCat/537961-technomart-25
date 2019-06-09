@@ -1,3 +1,28 @@
+@keyframes popup-show {
+  0%{
+    opacity: 0.8;
+  }
+  50%{
+    opacity: 0.9;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes form-error{
+  25%{
+    transform: translate(-5px, 0);
+  }
+  50%{
+    transform: translate(0, 0);
+  }
+  75%{
+    transform: translate(5px, 0);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
+}
 /*Общее*/
 html,body{
   height: 100%;
@@ -30,6 +55,10 @@ a {
 }
 .shift-left{
   margin-left: -20px;
+}
+.form-error{
+  animation: form-error 0.2s ease;
+  outline: 2px solid #ff0000;
 }
 
 /*Кнопка*/
@@ -553,6 +582,7 @@ a {
   left: 0;
   position: absolute;
   top: 0;
+  z-index: 1;
 }
 .slider-item-heading{
   font-size: 36px;
@@ -572,11 +602,9 @@ a {
   top: 0;
   z-index: -1;
 }
-.slide-drill{
-  z-index: 2;
-}
-.slide-perforator{
-  z-index: 1;
+.slide-show{
+  animation: popup-show 0.8s ease;
+  z-index: 15;
 }
 .slider-control{
   align-items: flex-start;
@@ -587,7 +615,7 @@ a {
   position: absolute;
   top: 0;
   width: inherit;
-  z-index: 10;
+  z-index: 20;
 }
 .slide-switching{
   display: inline-flex;
@@ -634,27 +662,19 @@ a {
   width: 140px;
 }
 .slide-btn{
-  position: absolute;
-  opacity: 0;
-}
-.slide-btn-new {
-  cursor: pointer;
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin: 0 5px;
   background-color: #fff;
   border: 2px solid #fff;
   border-radius: 50%;
-
+  cursor: pointer;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  padding: 0;
 }
-.slide-btn:focus ~ .slide-btn-new{
-  outline: 2px solid #2347ff;
-}
-.slide-btn:checked + .slide-btn-new{
+.slide-btn-selected{
   background-color: #ff5357;
 }
-
 
 /*Хлебные крошки*/
 .breadcrumbs-list{
@@ -1305,11 +1325,11 @@ a {
   background-color: #293449;
 }
 .service-link-active {
+  background-color: #ffffff;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   color: #32425c;
 }
-.service-link-active,
 .service-link-active:hover {
   background-color: #ffffff;
 }
@@ -1673,6 +1693,7 @@ a {
 
 /*Форма обратной связи*/
 .feedback-message{
+  animation: popup-show 0.5s linear;
   background-color: #fff;
   border-top: 7px solid #ff5257;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
@@ -1684,7 +1705,7 @@ a {
   width: 620px;
   z-index: 101;
 }
-.feedback-message-visually{
+.feedback-message-show{
   display: inline-block;
 }
 .feedback-input-wrap{
@@ -1704,11 +1725,15 @@ a {
   width: 220px;
 
 }
+.feedback-input[placeholder],
+.feedback-text[placeholder]{
+  color: #a9a9a9;
+}
 .feedback-input,
 .feedback-text{
-  border:2px solid #dee3e4;
+  border: 2px solid #dee3e4;
   border-radius: 2px;
-  color: #a9a9a9;
+  color: #000;
   font: normal 13px/18px "PT Sans", "Arial", sans-serif;
   margin-top: 10px;
   padding: 10px 12px;
@@ -1739,9 +1764,28 @@ a {
   margin: 35px auto;
   width: 460px;
 }
+.feedback-page{
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  /*opacity: 0.6;*/
+  width: 100%;
+}
+.feedback-message-page{
+  animation: popup-show 0.5s linear;
+  background-color: #fff;
+  border-top: 7px solid #ff5257;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  display: inline-block;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+}
 
 /*Попап карты*/
 .map-popup{
+  animation: popup-show 0.5s linear;
   background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
   display: none;
@@ -1756,7 +1800,7 @@ a {
   width: 940px;
   z-index: 101;
 }
-.map-popup-visually{
+.map-popup-show{
   display: block;
 }
 .map-popup iframe{
@@ -1787,7 +1831,7 @@ a {
   width: 620px;
   z-index: 101;
 }
-.order-message-visually{
+.order-message-show{
   display: block;
 }
 .order-heading{
@@ -1835,6 +1879,7 @@ a {
 
 /*перекрытие body*/
 .overlay{
+  animation: popup-show 0.5s linear;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
   height: 100%;
@@ -1844,6 +1889,6 @@ a {
   width: 100%;
   z-index: 100;
 }
-.overlay-visually{
+.overlay-show{
   display: block;
 }
