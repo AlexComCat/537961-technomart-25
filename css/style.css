@@ -1,4 +1,4 @@
-@keyframes popup-show {
+@keyframes opacity-show {
   0%{
     opacity: 0.8;
   }
@@ -7,6 +7,20 @@
   }
   100%{
     opacity: 1;
+  }
+}
+@keyframes lift{
+  0%{
+    top: 110%;
+  }
+  80%{
+    top: 45%;
+  }
+  90%{
+    top: 55%;
+  }
+  100%{
+    top: 50%;
   }
 }
 @keyframes form-error{
@@ -603,7 +617,7 @@ a {
   z-index: -1;
 }
 .slide-show{
-  animation: popup-show 0.8s ease;
+  animation: opacity-show 0.8s ease;
   z-index: 15;
 }
 .slider-control{
@@ -1693,7 +1707,6 @@ a {
 
 /*Форма обратной связи*/
 .feedback-message{
-  animation: popup-show 0.5s linear;
   background-color: #fff;
   border-top: 7px solid #ff5257;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
@@ -1706,6 +1719,7 @@ a {
   z-index: 101;
 }
 .feedback-message-show{
+  animation: lift 0.4s linear;
   display: inline-block;
 }
 .feedback-input-wrap{
@@ -1770,7 +1784,7 @@ a {
   width: 100%;
 }
 .feedback-message-page{
-  animation: popup-show 0.5s linear;
+  animation: opacity-show 0.5s linear;
   background-color: #fff;
   border-top: 7px solid #ff5257;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
@@ -1784,7 +1798,7 @@ a {
 
 /*Попап карты*/
 .map-popup{
-  animation: popup-show 0.5s linear;
+  animation: opacity-show 0.5s linear;
   background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
   display: none;
@@ -1831,6 +1845,7 @@ a {
   z-index: 101;
 }
 .order-message-show{
+  animation: lift 0.4s linear;
   display: block;
 }
 .order-message-page{
@@ -1846,7 +1861,7 @@ a {
   width: 100%;
 }
 .feedback-message-page{
-  animation: popup-show 0.5s linear;
+  animation: opacity-show 0.5s linear;
   background-color: #fff;
   border-top: 7px solid #ff5257;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
@@ -1903,7 +1918,7 @@ a {
 
 /*перекрытие body*/
 .overlay{
-  animation: popup-show 0.5s linear;
+  animation: opacity-show 0.5s linear;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
   height: 100%;
