@@ -52,6 +52,11 @@ body{
 a {
   text-decoration: none;
 }
+a:hover,
+a:hover::before,
+a:hover::after{
+  transition: all .3s ease-out;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -92,6 +97,11 @@ a {
 }
 .btn:hover{
   background-color: #ca2c37;
+}
+button:hover,
+button:hover::before,
+button:hover::after{
+  transition: all .3s ease-out;
 }
 .btn:active{
   background-color: #ba2732;
@@ -180,6 +190,10 @@ a {
 /*форма поиска*/
 .search-form{
   position: relative;
+}
+.search-form:hover,
+.search-form:hover .search-icon path{
+  transition: all .3s ease-out;
 }
 .search-form:hover{
   background-color: #212a3a;
@@ -360,6 +374,7 @@ a {
   left: 15px;
   opacity: 0.3;
   position: absolute;
+  transition: all .3s ease-out;
   top: 14px;
   width: 20px;
 }
@@ -405,6 +420,7 @@ a {
 }
 .account-btn:hover::before{
   opacity: 1;
+  /*transition: all .3s ease-out;*/
 }
 .account-btn:active::before{
   opacity: 0.3;
@@ -486,6 +502,7 @@ a {
 }
 .nav-item .nav-link:hover{
   background-color: #293449;
+  transition: all .3s ease-out;
 }
 .nav-item .nav-link:active{
   background-color: #1d2739;
@@ -1100,6 +1117,7 @@ a {
 }
 .product-item:hover{
   box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
+  transition: all .3s ease-out;
 }
 .product-item .flag {
   height: 60px;
@@ -1248,6 +1266,7 @@ a {
 }
 .pop-fabric-item:hover{
   box-shadow: 0 10px 25px 0 rgba(41, 52, 43, 0.5);
+  transition: all .3s ease-out;
 }
 .pop-fabric-item:active{
   opacity: 0.3;
@@ -1670,6 +1689,7 @@ a {
 .footer-bottom .social-link:hover,
 .footer-bottom .social-link:active{
   background-color: #ee3643;
+  transition: all .3s ease-out;
 }
 .footer-bottom .vk{
   background-image: url("../img/icon-vk.svg");
