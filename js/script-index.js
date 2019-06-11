@@ -92,8 +92,9 @@ var slider = {
     }
   }
 };
-slider.slides = slider.box.querySelectorAll(".slider-item");
-slider.btns = slider.box.querySelectorAll(".slide-btn");
+// var buttonTabsBtn = [].slice.call(document.querySelectorAll(".button-tabs__btn"),0);
+slider.slides = [].slice.call(slider.box.querySelectorAll(".slider-item"), 0);
+slider.btns = [].slice.call(slider.box.querySelectorAll(".slide-btn"), 0);
 slider.lastBtn = slider.box.querySelector(".slide-switch-last");
 slider.nextBtn = slider.box.querySelector(".slide-switch-next");
 slider.slide1Btn = slider.box.querySelector(".slide-1-btn");
@@ -111,8 +112,8 @@ var services = {
     this.items[num].classList.add("service-details-active");
   }
 };
-services.links = services.box.querySelectorAll(".service-link");
-services.items = services.box.querySelectorAll(".service-details-block");
+services.links = [].slice.call(services.box.querySelectorAll(".service-link"), 0);
+services.items = [].slice.call(services.box.querySelectorAll(".service-details-block"), 0);
 
 var basket = {
   box: document.querySelector(".basket"),
@@ -128,7 +129,7 @@ var basket = {
 var product = {
   box: document.querySelector(".product-list")
 };
-product.buyBtn = product.box.querySelectorAll(".product-buy");
+product.buyBtn = [].slice.call(product.box.querySelectorAll(".product-buy"), 0);
 
 var orderMes = {
   box: document.querySelector(".order-message"),
@@ -141,7 +142,7 @@ var orderMes = {
     overlay.close();
   }
 };
-orderMes.closeBtns = orderMes.box.querySelectorAll(".order-message-close");
+orderMes.closeBtns = [].slice.call(orderMes.box.querySelectorAll(".order-message-close"), 0);
 
 /*-----Слайдер-----*/
 // Перключение персональными кнопками

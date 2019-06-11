@@ -13,7 +13,7 @@ var basket = {
 var product = {
   box: document.querySelector(".product-list")
 };
-product.buyBtn = product.box.querySelectorAll(".product-buy");
+product.buyBtn = [].slice.call(product.box.querySelectorAll(".product-buy"), 0);
 
 var orderMes = {
   box: document.querySelector(".order-message"),
@@ -26,7 +26,7 @@ var orderMes = {
     overlay.close();
   }
 };
-orderMes.closeBtns = orderMes.box.querySelectorAll(".order-message-close");
+orderMes.closeBtns = [].slice.call(orderMes.box.querySelectorAll(".order-message-close"), 0);
 
 var overlay = {
   link: document.querySelector(".feedback-overlay"),
