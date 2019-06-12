@@ -36,7 +36,9 @@ try {
       overlay.close();
     }
   };
+  map.closeBtn = map.box.querySelector(".map-popup-close");
 } catch (err){}
+
 
 // Объект перекрывающего фона
 try{
@@ -152,6 +154,7 @@ try {
     box: document.querySelector(".product-list")
   };
   product.buyBtn = [].slice.call(product.box.querySelectorAll(".product-buy"), 0);
+  product.newPriceBtn = [].slice.call(product.box.querySelectorAll(".new-price"), 0);
 } catch (err){}
 
 // Объект сообщения добавления в корзину
@@ -167,6 +170,7 @@ try {
       overlay.close();
     }
   };
+  orderMes.regBtn = orderMes.box.querySelector(".order-registration");
   orderMes.closeBtns = [].slice.call(orderMes.box.querySelectorAll(".order-message-close"), 0);
 } catch(err){}
 
@@ -191,8 +195,6 @@ try{
     slider.slideLast();
   });
 } catch (err){}
-
-
 
 /*-----Сервисы-----*/
 try{
@@ -258,6 +260,7 @@ try{
     evt.preventDefault();
     map.box.classList.add("map-popup-show");
     overlay.open();
+    map.closeBtn.focus();
   });
   map.close = map.box.querySelector(".map-popup-close");
   map.close.addEventListener("click", function(evt){
@@ -273,6 +276,15 @@ try{
       evt.preventDefault();
       basket.refill();
       orderMes.show();
+      orderMes.regBtn.focus();
+    });
+  });
+  product.newPriceBtn.forEach(function (elem){
+    elem.addEventListener("click", function(evt){
+      evt.preventDefault();
+      basket.refill();
+      orderMes.show();
+      orderMes.regBtn.focus();
     });
   });
   orderMes.closeBtns.forEach(function (elem){
