@@ -848,7 +848,6 @@ button:hover::after{
   min-height: 20px;
 }
 .breadcrumbs-item{
-  background-color: rgba(255, 0, 0, 0.3);
   display: inline-block;
   position: relative;
 }
