@@ -110,46 +110,45 @@
 
               <fieldset class="filter-section filter-fabric">
                 <legend class="filter-legend">производители:</legend>
-                <label class="filter-label filter-fabric-label">
-                  <input type="checkbox" class="filter-input" name="bosch">
+                <div class="filter-input-box">
+                  <input type="checkbox" id="filter-checkbox-1" class="filter-input" name="filter-fabric" value="bosch">
                   <span class="filter-new-input"></span>
-                  bosch
-                </label>
-                <label class="filter-label filter-fabric-label">
-                  <input type="checkbox" class="filter-input" name="interskol">
+                  <label for="filter-checkbox-1" class="filter-label">bosch</label>
+                </div>
+                <div class="filter-input-box">
+                  <input type="checkbox" id="filter-checkbox-2" class="filter-input" name="filter-fabric" value="interskol">
                   <span class="filter-new-input"></span>
-                  интерскол
-                </label>
-                <label class="filter-label filter-fabric-label">
-                  <input type="checkbox" class="filter-input" name="makita">
+                  <label for="filter-checkbox-2" class="filter-label">интерскол</label>
+                </div>
+                <div class="filter-input-box">
+                  <input type="checkbox" id="filter-checkbox-3" class="filter-input" name="filter-fabric" value="makita">
                   <span class="filter-new-input"></span>
-                  makita
-                </label>
-                <label class="filter-label filter-fabric-label">
-                  <input type="checkbox" class="filter-input" name="dewalt">
+                  <label for="filter-checkbox-3" class="filter-label">makita</label>
+                </div>
+                <div class="filter-input-box">
+                  <input type="checkbox" id="filter-checkbox-4" class="filter-input" name="filter-fabric" value="dewalt">
                   <span class="filter-new-input"></span>
-                  dewalt
-                </label>
-                <label class="filter-label filter-fabric-label">
-                  <input type="checkbox" class="filter-input" name="hitachi">
+                  <label for="filter-checkbox-4" class="filter-label">dewalt</label>
+                </div>
+                <div class="filter-input-box">
+                  <input type="checkbox" id="filter-checkbox-5" class="filter-input" name="filter-fabric" value="hitachi">
                   <span class="filter-new-input"></span>
-                  hitachi
-                </label>
+                  <label for="filter-checkbox-5" class="filter-label">hitachi</label>
+                </div>
               </fieldset>
 
               <fieldset class="filter-section filter-supply">
                 <legend class="filter-legend">питание:</legend>
-                <label class="filter-label">
-                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-battery" checked>
+                <div class="filter-input-box">
+                  <input type="radio" id="filter-radio-1" class="filter-input" name="filter-power-group" value="filter-battery" checked>
                   <span class="filter-new-input"></span>
-                  аккумуляторные
-                </label>
-
-                <label class="filter-label">
-                  <input type="radio" class="filter-input" name="filter-power-group" value="filter-network">
+                  <label for="filter-radio-1" class="filter-label">аккумуляторные</label>
+                </div>
+                <div class="filter-input-box">
+                  <input type="radio" id="filter-radio-2" class="filter-input" name="filter-power-group" value="filter-network">
                   <span class="filter-new-input"></span>
-                  сетевые
-                </label>
+                  <label for="filter-radio-2" class="filter-label">сетевые</label>
+                </div>
               </fieldset>
               <button type="submit" class="filter-show btn">показать</button>
             </form>
@@ -367,7 +366,7 @@
         <a href="#" class="order-registration btn">оформить заказ</a>
         <a href="catalog.html" class="continue-shopping btn order-message-close">продолжить покупки</a>
       </div>
-      <a href="#" class="btn-close order-message-close" aria-label="Закрыть окно"></a>
+      <button href="#" class="btn-close order-message-close" aria-label="Закрыть окно"></button>
     </section>
 
     <!--перекрытие body-->

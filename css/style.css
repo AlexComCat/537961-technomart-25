@@ -169,6 +169,8 @@ button:hover::after {
 
 /*Кнопка закрытия формы*/
 .btn-close {
+  background-color: transparent;
+  border: none;
   display: block;
   position: absolute;
   top: 10px;
@@ -177,7 +179,6 @@ button:hover::after {
   height: 21px;
   cursor: pointer;
 }
-
 .btn-close:before,
 .btn-close:after {
   content: "";
@@ -192,7 +193,6 @@ button:hover::after {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 .btn-close:after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -204,6 +204,19 @@ button:hover::after {
 .btn-close:active::before,
 .btn-close:active::after {
   background-color: #ba2732;
+}
+.flag {
+  height: 60px;
+  overflow: hidden;
+  position: absolute;
+  right: -1px;
+  text-indent: -1000px;
+  top: -1px;
+  width: 60px;
+  z-index: 20;
+}
+.flag-new {
+  background: url("../img/new_flag.png") no-repeat 0 0;
 }
 
 /*Логотип*/
@@ -280,6 +293,9 @@ button:hover::after {
   color: #fff;
 }
 .search-input:-ms-input-placeholder {
+  color: #fff;
+}
+.search-input::-ms-input-placeholder {
   color: #fff;
 }
 .search-input::placeholder {
@@ -624,6 +640,10 @@ button:hover::after {
   min-height: 410px;
   margin-top: 60px;
 }
+.features .flag {
+  right: 0;
+  top: 0;
+}
 .features .shift-left {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -674,7 +694,7 @@ button:hover::after {
   font-size: 24px;
   line-height: 30px;
   font-weight: normal;
-  margin: 20px 132px 12px 22px;
+  margin: 22px 132px 12px 22px;
 }
 .features-btn {
   background-color: rgba(0, 0, 0, 0.1);
@@ -938,6 +958,7 @@ button:hover::after {
   margin-left: 20px;
   width: 700px;
 }
+
 /*Фильтр для catalog*/
 .filter {
   font: normal 15px/20px "PT Sans", Arial, sans-serif;
@@ -961,7 +982,7 @@ button:hover::after {
   display: block;
   color: #000;
   text-transform: uppercase;
-  padding: 0;
+  padding: 0 0 2px 0;
   margin: 7px 0 0 0;
 }
 .filter-supply {
@@ -974,7 +995,6 @@ button:hover::after {
   margin: 0;
   padding: 10px 0 14px 0;
 }
-
 
 /*Фильтр по диапазону*/
 .filter-price {
@@ -1068,14 +1088,12 @@ button:hover::after {
   font-size: 16px;
 }
 
-
 /*Фильтры по производителям и патанию*/
-.filter-label {
-  cursor: pointer;
+.filter-input-box {
   display: block;
   font-size: 15px;
   line-height: 20px;
-  margin: 0 35px 20px 35px;
+  margin: 0 35px 15px 0;
   position: relative;
 }
 .filter-input {
@@ -1084,38 +1102,46 @@ button:hover::after {
 }
 .filter-new-input {
   background: url("../img/checkbox-off.svg") no-repeat left;
-  height: 27px;
-  position: absolute;
-  top: -5px;
-  left: -35px;
-  width: 27px;
-}
-
-/*Фильтр по производителю*/
-.filter-fabric .filter-new-input {
-  background: url("../img/checkbox-off.svg") no-repeat left;
+  cursor: pointer;
   height: 27px;
   position: absolute;
   top: -3px;
-  left: -35px;
+  left: 0;
   width: 27px;
+  z-index: -1;
 }
-.filter-fabric .filter-input:focus ~ .filter-new-input {
+.filter-label {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0px 20px 5px 35px;
+  vertical-align: center;
+}
+.filter-input:focus ~ .filter-label {
   opacity: 0.5;
+}
+.filter-input:disabled ~ .filter-new-input {
+  opacity: 0.3;
+}
+.filter-input:disabled ~ .filter-label {
+  opacity: 0.3;
+}
+
+/*Фильтр по производителю*/
+.filter-fabric {
+  margin-top: 5px;
+}
+.filter-fabric .filter-new-input {
+  background: url("../img/checkbox-off.svg") no-repeat left;
+  height: 27px;
+  width: 27px;
 }
 .filter-fabric .filter-input:checked + .filter-new-input {
   background: url("../img/checkbox-on.svg") no-repeat left;
 }
 
 /*Фильтр по питанию*/
-.filter-supply {
-  margin-top: 8px;
-}
 .filter-supply .filter-new-input {
   background: url("../img/radio-off.svg") no-repeat left;
-}
-.filter-supply .filter-input:focus ~ .filter-new-input {
-  opacity: 0.5;
 }
 .filter-supply .filter-input:checked + .filter-new-input {
   background: url("../img/radio-on.svg") no-repeat left;
@@ -1127,23 +1153,27 @@ button:hover::after {
   border: 1px solid #e5e5e5;
   color: #000;
   font: normal 13px/18px "PT Sans", "Arial", sans-serif;
-  margin-top: 57px;
+  margin-top: 55px;
   outline: none;
   width: 140px;
 }
 .filter-show:hover {
-  background-color: #e5e5e5;
+  background-color: transparent;
+  border-color: #bdc6ca;
 }
 .filter-show:focus {
-  border-color: #9a9a9a;
+  border-color: #bdc6ca;
 }
 .filter-show:active {
   background-color: transparent;
-  border-color: #9a9a9a;
+  border-color: #ee3643;
+  -webkit-transition: none;
+  transition: none;
 }
 .filter-section input:disabled {
   color: rgba(0, 0, 0, 0.4);
 }
+
 
 /*--Сортировка--*/
 .sort {
@@ -1201,6 +1231,8 @@ button:hover::after {
 .sort-link:active {
   border: none;
   color: #ee3643;
+  -webkit-transition: none;
+  transition: none;
 }
 .sort-up,
 .sort-down {
@@ -1300,19 +1332,6 @@ button:hover::after {
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
-.product-item .flag {
-  height: 60px;
-  overflow: hidden;
-  position: absolute;
-  right: -1px;
-  text-indent: -1000px;
-  top: -1px;
-  width: 60px;
-  z-index: 20;
-}
-.product-item .flag-new {
-  background: url("../img/new_flag.png") no-repeat 0 0;
-}
 .product-item .product-actions {
   background-color: rgba(255,255,255,0.9);
   height: 88px;
@@ -1369,11 +1388,11 @@ button:hover::after {
 .product-item:hover .product-actions {
   display: block;
 }
-.product-item .product-img {
+.product-img {
   height: 168px;
   width: 218px;
 }
-.product-item .product-img img {
+.product-img img {
   height: 170px;
   width: 218px;
 }
@@ -1456,7 +1475,7 @@ button:hover::after {
 .pop-fabric-item:active {
   opacity: 0.3;
 }
-.pop-fabric-item .pop-fabric-link {
+.pop-fabric-link {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1469,7 +1488,7 @@ button:hover::after {
   height: 143px;
   width: 218px;
 }
-.pop-fabric-item .pop-fabric-link img {
+.pop-fabric-link img {
   max-height: 141px;
   max-width: 216px;
 }
@@ -1480,9 +1499,6 @@ button:hover::after {
   border-bottom: 2px solid transparent;
   margin-top: 65px;
   min-height: 520px;
-}
-.services .container {
-  padding-bottom: 50px;
 }
 .service-title,
 .service-details-title {
@@ -1505,6 +1521,9 @@ button:hover::after {
 }
 
 .service-columns {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1531,9 +1550,9 @@ button:hover::after {
   -ms-flex-pack: center;
   justify-content: center;
   list-style: none;
-  margin: 0;
-  min-height: 272px;
-  padding: 0;
+  margin: 6px 0 0 0;
+  min-height: 222px;
+  padding: 25px 0 50px 0;
   position: relative;
   width: 240px;
 }
@@ -1543,13 +1562,13 @@ button:hover::after {
   min-height: 100%;
   position: absolute;
   right: 0;
-  top: 0;
+  top: -12px;
   width: 10px;
 }
 .service-link {
   background-color: #32425c;
   border-bottom: 1px solid #293449;
-  border-top: 1px solid #405069;
+  border-top: 2px solid #405069;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
@@ -1565,7 +1584,7 @@ button:hover::after {
 }
 .service-link-active {
   background-color: #ffffff;
-  border-top: 1px solid transparent;
+  border-top: 2px solid transparent;
   border-bottom: 1px solid transparent;
   color: #32425c;
 }
@@ -1578,6 +1597,7 @@ button:hover::after {
   display: none;
   float: right;
   min-height: 283px;
+  padding-bottom: 50px;
   position: relative;
   width: 620px;
 }
@@ -1592,55 +1612,30 @@ button:hover::after {
   margin: 48px 0 24px 0;
 }
 .service-delivery-info {
-  width: 280px;
+  width: 278px;
 }
-.service-delivery-info + .service-delivery-info {
-  width: 180px;
-}
-.service-details-delivery:before,
-.service-details-warrianty:before,
-.service-details-credit:before {
-  bottom: -50px;
-  content: "";
-  position: absolute;
-  right: 0;
-}
-.service-details-delivery:before {
-  background: url("../img/delivery-bg.png") no-repeat center;
-  height: 261px;
-  width: 468px;
+.service-details-delivery {
+  background: url("../img/delivery-bg.png") no-repeat 100% 100%;
 }
 .service-warrianty-info {
-  width: 360px;
+  width: 374px;
 }
-.service-warrianty-info + .service-warrianty-info {
-  width: 400px;
-}
-.service-details-warrianty:before {
-  background: url("../img/guarantee-bg.png") no-repeat center;
-  height: 283px;
-  width: 389px;
+.service-details-warrianty {
+  background: url("../img/guarantee-bg.png") no-repeat 100% 100%;
 }
 .service-credit-info {
   width: 360px;
 }
-.service-credit-info + .service-credit-info {
-  width: 380px;
-  margin-bottom: 29px;
-}
-.service-details-credit:before {
-  background: url("../img/credit-bg.png") no-repeat center;
-  height: 285px;
-  width: 465px;
+.service-details-credit {
+  background: url("../img/credit-bg.png") no-repeat 100% 100%;
 }
 .service-btn {
   color: #fff;
-  margin-top: 26px;
+  margin-top: 25px;
   padding: 10px;
   text-transform: uppercase;
   width: 175px;
 }
-
 
 /*Доставка и контакты*/
 .company-info {
@@ -1659,6 +1654,7 @@ button:hover::after {
   font: normal 30px/30px "Cuprum", Arial, sans-serif;
   margin: 78px 0 0 0;
   text-transform: uppercase;
+  vertical-align: top;
 }
 .delivery-text,
 .contacts-caption {
@@ -1709,11 +1705,11 @@ button:hover::after {
   margin-top: 25px;
   width: 220px;
 }
-.contacts .map-address {
+.map-address {
   display: block;
   margin-top: 30px;
 }
-.contacts .map-address img {
+.map-address img {
   height: 158px;
   width: 300px;
 }
