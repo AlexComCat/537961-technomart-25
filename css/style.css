@@ -1228,7 +1228,9 @@ button:hover::after {
   border-bottom: 1px solid #ee3643;
   color: rgba(0, 0, 0, 1);
 }
-.sort-link:active {
+.sort-link:active,
+.sort-link-active:hover,
+.sort-link-active {
   border: none;
   color: #ee3643;
   -webkit-transition: none;
@@ -1251,7 +1253,9 @@ button:hover::after {
 .sort-up:hover {
   border-bottom: 12px solid rgba(0, 0, 0, 1);
 }
-.sort-up:active {
+.sort-up:active,
+.sort-up-active,
+.sort-up-active:hover {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 12px solid #ee3643;
@@ -1268,7 +1272,9 @@ button:hover::after {
   border-bottom: none;
   border-top: 12px solid rgba(0, 0, 0, 1);
 }
-.sort-down:active {
+.sort-down:active,
+.sort-down-active,
+.sort-down-active:hover {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 12px solid #ee3643;
